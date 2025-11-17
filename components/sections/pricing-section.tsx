@@ -105,6 +105,59 @@ export function PricingSection() {
         ],
       },
     ],
+    combo: [
+      {
+        name: "Biz Booster",
+        price: "₹1,25,000",
+        coreOffering: "Website + Android App",
+        description: "The perfect starting point for businesses ready to establish a strong digital presence across web and mobile platforms.",
+        features: [
+          "Professional 10-page website",
+          "Native Android application",
+          "Unified backend system",
+          "Shared user database",
+          "Consistent branding across platforms",
+          "SEO & ASO optimisation",
+          "3-month support package",
+        ],
+      },
+      {
+        name: "Full Growth Suite",
+        price: "₹1,75,000",
+        badge: "BEST VALUE",
+        coreOffering: "Website + Android + iOS",
+        description: "Our most popular package delivers complete platform coverage, ensuring you reach your audience wherever they are with a cohesive, professional digital ecosystem.",
+        features: [
+          "Professional responsive website",
+          "Android & iOS native apps",
+          "Advanced backend architecture",
+          "Real-time data synchronisation",
+          "Comprehensive admin dashboard",
+          "Cross-platform user accounts",
+          "Analytics & reporting tools",
+          "Priority deployment assistance",
+          "6-month premium support",
+        ],
+      },
+      {
+        name: "E-Commerce Empire",
+        price: "₹2,00,000–₹2,25,000",
+        coreOffering: "Complete E-Commerce Solution",
+        description: "The ultimate solution for serious online retailers ready to dominate their market with professional-grade e-commerce infrastructure.",
+        features: [
+          "Full e-commerce website",
+          "Android & iOS shopping apps",
+          "Advanced inventory management",
+          "Multi-gateway payment system",
+          "Order & logistics tracking",
+          "Customer loyalty programme",
+          "Marketing automation tools",
+          "Sales analytics dashboard",
+          "Vendor management system",
+          "12-month enterprise support",
+        ],
+      },
+    ],
   }
 
   return (
@@ -146,11 +199,26 @@ export function PricingSection() {
           </div>
         </div>
 
+        {/* All-in-One Packages */}
+        <div className="mb-20">
+          <div className="mb-8">
+            <h3 className="mb-4 font-sans text-2xl font-light text-foreground md:text-3xl">All-in-One Packages</h3>
+            <p className="max-w-3xl text-base leading-relaxed text-foreground/80 md:text-lg">
+              Maximise your digital impact with our comprehensive combo packages. These bundled solutions offer exceptional value whilst ensuring seamless integration between your website and mobile applications, creating a unified brand experience across all platforms.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {packages.combo.map((pkg, i) => (
+              <ComboPricingCard key={i} package={pkg} index={i} isVisible={isVisible} delay={600 + i * 100} />
+            ))}
+          </div>
+        </div>
+
         <div
           className={`text-center transition-all duration-700 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
-          style={{ transitionDelay: "600ms" }}
+          style={{ transitionDelay: "900ms" }}
         >
           <p className="mb-6 text-foreground/80">Need a custom solution? Let's build something together.</p>
           <MagneticButton variant="primary" size="lg">
@@ -223,7 +291,102 @@ function PricingCard({
           ))}
         </ul>
 
-        <MagneticButton variant="secondary" className="w-full">
+        <MagneticButton
+          variant="secondary"
+          className="w-full"
+          onClick={() => {
+            const contactSection = document.getElementById("contact")
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: "smooth" })
+            } else {
+              window.location.href = "/#contact"
+            }
+          }}
+        >
+          Choose Plan
+        </MagneticButton>
+      </div>
+    </div>
+  )
+}
+
+function ComboPricingCard({
+  package: pkg,
+  index,
+  isVisible,
+  delay,
+}: {
+  package: {
+    name: string
+    price: string
+    badge?: string
+    coreOffering: string
+    description: string
+    features: string[]
+  }
+  index: number
+  isVisible: boolean
+  delay: number
+}) {
+  return (
+    <div
+      className={`group transition-all duration-700 ${
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+      }`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      <div className="relative h-full rounded-xl border border-foreground/10 bg-card/50 backdrop-blur-sm p-6 transition-all duration-500 hover:border-foreground/30 hover:bg-card/80 hover:shadow-2xl hover:shadow-foreground/10 hover:-translate-y-2 md:p-8">
+        {pkg.badge && (
+          <div className="absolute top-6 right-6">
+            <span className="inline-block rounded-full bg-accent px-3 py-1 font-mono text-xs text-accent-foreground font-semibold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-accent/50">
+              {pkg.badge}
+            </span>
+          </div>
+        )}
+
+        <h4 className="mb-2 font-sans text-xl font-light text-foreground transition-all duration-300 group-hover:text-foreground md:text-2xl">
+          {pkg.name}
+        </h4>
+
+        <div className="mb-4 transition-all duration-300">
+          <span className="text-3xl font-light text-foreground group-hover:text-accent transition-colors duration-300 md:text-4xl">
+            {pkg.price}
+          </span>
+        </div>
+
+        <div className="mb-4 border-b border-foreground/20 pb-4">
+          <p className="text-sm font-semibold text-foreground/90 md:text-base">{pkg.coreOffering}</p>
+        </div>
+
+        <ul className="mb-6 space-y-3">
+          {pkg.features.map((feature, i) => (
+            <li
+              key={i}
+              className="flex items-start gap-3 text-sm text-foreground/80 transition-all duration-300 group-hover:text-foreground/90"
+              style={{
+                transitionDelay: `${i * 30}ms`,
+              }}
+            >
+              <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-125" />
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p className="mb-6 text-xs leading-relaxed text-foreground/70 md:text-sm">{pkg.description}</p>
+
+        <MagneticButton
+          variant="secondary"
+          className="w-full"
+          onClick={() => {
+            const contactSection = document.getElementById("contact")
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: "smooth" })
+            } else {
+              window.location.href = "/#contact"
+            }
+          }}
+        >
           Choose Plan
         </MagneticButton>
       </div>

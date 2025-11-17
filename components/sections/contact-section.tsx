@@ -10,26 +10,60 @@ export function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState("")
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+    // Clear previous errors
+    setSubmitError("")
+
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
+      setSubmitError("Please fill in all fields")
+      return
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email)) {
+      setSubmitError("Please enter a valid email address")
       return
     }
 
     setIsSubmitting(true)
 
-    // Simulate form submission (replace with actual API call later)
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
 
-    setIsSubmitting(false)
-    setSubmitSuccess(true)
-    setFormData({ name: "", email: "", message: "" })
+      const data = await response.json()
 
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitSuccess(false), 5000)
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message")
+      }
+
+      // Success
+      setSubmitSuccess(true)
+      setFormData({ name: "", email: "", message: "" })
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitSuccess(false), 5000)
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Failed to send message. Please try again later."
+      )
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -167,12 +201,22 @@ export function ContactSection() {
                 }`}
                 style={{ transitionDelay: "650ms" }}
               >
-                <MagneticButton variant="primary" size="lg" className="w-full disabled:opacity-50">
+                <MagneticButton
+                  variant="primary"
+                  size="lg"
+                  className="w-full disabled:opacity-50"
+                  disabled={isSubmitting}
+                >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </MagneticButton>
                 {submitSuccess && (
-                  <p className="mt-3 text-center font-mono text-sm text-foreground/80 animate-in fade-in duration-300">
-                    Message sent successfully!
+                  <p className="mt-3 text-center font-mono text-sm text-green-400 animate-in fade-in duration-300">
+                    Message sent successfully! We'll get back to you soon.
+                  </p>
+                )}
+                {submitError && (
+                  <p className="mt-3 text-center font-mono text-sm text-red-400 animate-in fade-in duration-300">
+                    {submitError}
                   </p>
                 )}
               </div>
