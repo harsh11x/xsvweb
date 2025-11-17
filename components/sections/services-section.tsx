@@ -11,28 +11,28 @@ export function ServicesSection() {
   const services = [
     {
       title: "Website Building",
-      description: "Professional, responsive websites optimized for performance and SEO",
+      description: "Transform your online presence with custom websites that combine stunning design, exceptional performance, and strategic functionality. We build scalable, SEO-optimized sites that convert visitors into customers while reflecting your unique brand identity.",
       icon: Globe,
       features: ["Responsive Design", "SEO Optimized", "Fast Loading", "CMS Integration"],
       color: "text-blue-500",
     },
     {
       title: "Social Media Marketing",
-      description: "Strategic campaigns that engage your audience and drive conversions",
+      description: "Build thriving online communities and drive engagement through strategic social media campaigns. From content creation to community management, we help you connect with your audience, amplify your message, and achieve measurable growth across all platforms.",
       icon: Share2,
       features: ["Content Strategy", "Campaign Management", "Analytics", "Community Growth"],
       color: "text-emerald-500",
     },
     {
       title: "Branding & Design",
-      description: "Cohesive visual identities that make your brand stand out",
+      description: "Create memorable brand identities that resonate with your audience and differentiate you from competitors. We develop cohesive visual systems—from logos to brand guidelines—that tell your story and build lasting emotional connections.",
       icon: Palette,
       features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Design Systems"],
       color: "text-amber-500",
     },
     {
       title: "Mobile App Development",
-      description: "Native Android and iOS apps that deliver exceptional user experiences",
+      description: "Bring your ideas to life with powerful mobile applications for iOS and Android. We build native and cross-platform apps that combine beautiful design, exceptional performance, and intuitive user experiences—delivering solutions that users love and businesses rely on.",
       icon: Smartphone,
       features: ["iOS Development", "Android Development", "Cross-platform", "App Store Launch"],
       color: "text-pink-500",

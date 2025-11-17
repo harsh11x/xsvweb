@@ -96,9 +96,6 @@ export default function Home() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-2 transition-transform hover:scale-105"
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground/15 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-foreground/25">
-            <span className="font-sans text-xl font-bold text-foreground">X</span>
-          </div>
           <span className="font-sans text-sm font-semibold tracking-tight text-foreground md:text-base">
             XSV Outdoor Media
           </span>
@@ -141,8 +138,7 @@ export default function Home() {
             </h1>
             <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
               <span className="text-pretty">
-                Digital marketing solutions that drive growth. From stunning websites to mobile apps, social media
-                campaigns, and strategic branding—we deliver results that matter.
+                We craft exceptional digital experiences that transform businesses. From high-performance websites and mobile applications to strategic social media campaigns and compelling brand identities—we combine creative excellence with technical expertise to deliver solutions that drive measurable results and lasting impact.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">

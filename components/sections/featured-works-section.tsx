@@ -41,8 +41,7 @@ export function FeaturedWorksSection() {
             <span className="text-balance">Featured Work</span>
           </h2>
           <p className="max-w-2xl text-lg leading-relaxed text-foreground/80 md:text-xl">
-            Showcase of projects we've brought to life. From e-commerce platforms to secure communication systems, we
-            build solutions that make an impact.
+            Discover the digital solutions we've crafted for forward-thinking businesses. From comprehensive e-commerce platforms that drive sales to secure communication systems that protect sensitive data, each project represents our commitment to excellence, innovation, and delivering measurable results.
           </p>
         </div>
 

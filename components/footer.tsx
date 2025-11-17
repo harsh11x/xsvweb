@@ -1,9 +1,31 @@
 "use client"
 
 import { useReveal } from "@/hooks/use-reveal"
+import Link from "next/link"
 
 export function Footer() {
   const { ref, isVisible } = useReveal(0.3)
+
+  const serviceLinks = [
+    { name: "Website Building", path: "/website-building" },
+    { name: "Social Media", path: "/social-media" },
+    { name: "Branding", path: "/branding" },
+    { name: "App Development", path: "/app-development" },
+  ]
+
+  const companyLinks = [
+    { name: "Featured Work", path: "/featured-work" },
+    { name: "About Us", path: "/about-us" },
+    { name: "Our Work", path: "/our-work" },
+    { name: "Blog", path: "/blog" },
+  ]
+
+  const legalLinks = [
+    { name: "Privacy Policy", path: "/privacy-policy" },
+    { name: "Terms of Service", path: "/terms-of-service" },
+    { name: "Cookies", path: "/cookies" },
+    { name: "Contact", path: "/#contact" },
+  ]
 
   return (
     <footer
@@ -18,12 +40,9 @@ export function Footer() {
               isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
             }`}
           >
-            <button className="group mb-6 flex items-center gap-2 transition-transform hover:scale-105">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-foreground/15 backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:bg-foreground/25">
-                <span className="font-sans text-xl font-bold text-foreground">X</span>
-              </div>
+            <Link href="/" className="group mb-6 flex items-center gap-2 transition-transform hover:scale-105">
               <span className="font-sans text-sm font-semibold tracking-tight text-foreground">XSV Outdoor Media</span>
-            </button>
+            </Link>
             <p className="text-sm leading-relaxed text-foreground/70">
               Transforming outdoor media into digital excellence through innovative solutions and strategic thinking.
             </p>
@@ -38,12 +57,12 @@ export function Footer() {
           >
             <h3 className="mb-4 font-sans text-sm font-semibold uppercase tracking-tight text-foreground">Services</h3>
             <ul className="space-y-3">
-              {["Website Building", "Social Media", "Branding", "App Development"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
-                    {item}
+              {serviceLinks.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.path} className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
+                    {item.name}
                     <span className="block h-px w-0 bg-foreground/70 transition-all duration-300 group-hover:w-full" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -58,12 +77,12 @@ export function Footer() {
           >
             <h3 className="mb-4 font-sans text-sm font-semibold uppercase tracking-tight text-foreground">Company</h3>
             <ul className="space-y-3">
-              {["Featured Work", "About Us", "Our Work", "Blog"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
-                    {item}
+              {companyLinks.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.path} className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
+                    {item.name}
                     <span className="block h-px w-0 bg-foreground/70 transition-all duration-300 group-hover:w-full" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -78,12 +97,12 @@ export function Footer() {
           >
             <h3 className="mb-4 font-sans text-sm font-semibold uppercase tracking-tight text-foreground">Legal</h3>
             <ul className="space-y-3">
-              {["Privacy Policy", "Terms of Service", "Cookies", "Contact"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
-                    {item}
+              {legalLinks.map((item) => (
+                <li key={item.name}>
+                  <Link href={item.path} className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
+                    {item.name}
                     <span className="block h-px w-0 bg-foreground/70 transition-all duration-300 group-hover:w-full" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -100,18 +119,18 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:xsvoutdoormedia@gmail.com"
+                  href="mailto:xsvoutdoor.media@gmail.com"
                   className="group text-sm text-foreground/70 transition-colors hover:text-foreground"
                 >
-                  xsvoutdoormedia@gmail.com
+                  xsvoutdoor.media@gmail.com
                   <span className="block h-px w-0 bg-foreground/70 transition-all duration-300 group-hover:w-full" />
                 </a>
               </li>
               <li>
-                <a href="#" className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
+                <Link href="/#contact" className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
                   Get Support
                   <span className="block h-px w-0 bg-foreground/70 transition-all duration-300 group-hover:w-full" />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

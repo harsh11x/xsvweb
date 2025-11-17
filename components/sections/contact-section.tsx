@@ -55,7 +55,7 @@ export function ContactSection() {
 
             <div className="space-y-4 md:space-y-8">
               <a
-                href="mailto:hello@xsvoutdoormedia.com"
+                href="mailto:xsvoutdoor.media@gmail.com"
                 className={`group block transition-all duration-700 ${
                   isVisible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
                 }`}
@@ -68,7 +68,7 @@ export function ContactSection() {
                   </span>
                 </div>
                 <p className="text-base text-foreground transition-colors duration-300 group-hover:text-accent md:text-2xl">
-                  hello@xsvoutdoormedia.com
+                  xsvoutdoor.media@gmail.com
                 </p>
               </a>
 

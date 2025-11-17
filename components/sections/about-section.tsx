@@ -36,12 +36,10 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: () => void
               style={{ transitionDelay: "200ms" }}
             >
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                XSV Outdoor Media is a full-service digital marketing agency specializing in web development, mobile app
-                building, social media marketing, and comprehensive branding solutions.
+                XSV Outdoor Media is a full-service digital marketing agency specializing in web development, mobile app building, social media marketing, and comprehensive branding solutions. We transform businesses through innovative digital experiences that drive growth and build lasting customer relationships.
               </p>
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                We partner with businesses to create digital experiences that drive growth and build lasting customer
-                relationships.
+                With a proven track record of delivering exceptional results, we combine creative vision with technical expertise to help businesses establish and enhance their online presence. From startups launching their first website to established companies modernizing their digital strategy, we're your trusted partner in digital excellence.
               </p>
             </div>
           </div>
