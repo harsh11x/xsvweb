@@ -119,10 +119,21 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    cursor: none;
   }
+  
+  /* Disable custom cursor on mobile/touch devices */
+  @media (hover: hover) and (pointer: fine) {
+    * {
+      cursor: none;
+    }
+  }
+  
   body {
     @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
   }
 
   [data-scroll-container] {
@@ -137,10 +148,41 @@
     transform: translateZ(0);
     will-change: transform;
     contain: layout style paint;
+    min-width: 0; /* Prevent overflow on mobile */
   }
 
-  button {
+  button, a {
+    min-height: 44px; /* iOS touch target minimum */
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transform: translateZ(0);
     backface-visibility: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Improve touch targets on mobile */
+  @media (max-width: 768px) {
+    a, button {
+      min-height: 44px;
+    }
+    
+    input, textarea, select {
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+  }
+  
+  /* Prevent horizontal scroll */
+  html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  /* Optimize images for mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 }

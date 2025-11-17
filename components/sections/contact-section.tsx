@@ -69,22 +69,22 @@ export function ContactSection() {
   return (
     <section
       ref={ref}
-      className="flex min-h-screen w-full flex-col justify-center px-6 py-20 md:px-12 md:py-24 lg:px-16"
+      className="flex min-h-screen w-full flex-col justify-center px-4 py-16 sm:px-6 sm:py-20 md:px-12 md:py-24 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
-        <div className="grid gap-8 md:grid-cols-[1.2fr_1fr] md:gap-16 lg:gap-24">
+        <div className="grid gap-8 sm:gap-12 md:grid-cols-[1.2fr_1fr] md:gap-16 lg:gap-24">
           <div className="flex flex-col justify-center">
             <div
-              className={`mb-6 transition-all duration-700 md:mb-12 ${
+              className={`mb-6 transition-all duration-700 sm:mb-8 md:mb-12 ${
                 isVisible ? "translate-x-0 opacity-100" : "-translate-x-12 opacity-0"
               }`}
             >
-              <h2 className="mb-2 font-sans text-4xl font-light leading-[1.05] tracking-tight text-foreground md:mb-3 md:text-7xl lg:text-8xl">
+              <h2 className="mb-2 font-sans text-3xl font-light leading-[1.05] tracking-tight text-foreground sm:text-4xl sm:mb-3 md:text-6xl lg:text-7xl xl:text-8xl">
                 Ready to
                 <br />
                 grow?
               </h2>
-              <p className="font-mono text-xs text-foreground/60 md:text-base">/ Get in touch with our team</p>
+              <p className="font-mono text-xs text-foreground/60 sm:text-sm md:text-base">/ Get in touch with our team</p>
             </div>
 
             <div className="space-y-4 md:space-y-8">
@@ -101,7 +101,7 @@ export function ContactSection() {
                     Email
                   </span>
                 </div>
-                <p className="text-base text-foreground transition-colors duration-300 group-hover:text-accent md:text-2xl">
+                <p className="text-sm text-foreground transition-colors duration-300 group-hover:text-accent break-all sm:text-base md:text-xl lg:text-2xl">
                   xsvoutdoor.media@gmail.com
                 </p>
               </a>
@@ -116,7 +116,7 @@ export function ContactSection() {
                   <MapPin className="h-3 w-3 text-foreground/60" />
                   <span className="font-mono text-xs text-foreground/60">Location</span>
                 </div>
-                <p className="text-base text-foreground md:text-2xl">India</p>
+                <p className="text-sm text-foreground sm:text-base md:text-xl lg:text-2xl">India</p>
               </div>
 
               <div
@@ -143,20 +143,20 @@ export function ContactSection() {
 
           {/* Right side - Minimal form */}
           <div className="flex flex-col justify-center">
-            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 md:space-y-6">
               <div
                 className={`transition-all duration-700 ${
                   isVisible ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
                 }`}
                 style={{ transitionDelay: "200ms" }}
               >
-                <label className="mb-1 block font-mono text-xs text-foreground/60 md:mb-2">Name</label>
+                <label className="mb-1 block font-mono text-xs text-foreground/60 sm:mb-2">Name</label>
                 <input
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 transition-all duration-300 focus:border-accent focus:outline-none focus:text-foreground md:py-2 md:text-base"
+                  className="w-full min-h-[44px] border-b border-foreground/30 bg-transparent py-2 text-base text-foreground placeholder:text-foreground/40 transition-all duration-300 focus:border-accent focus:outline-none focus:text-foreground sm:py-2.5"
                   placeholder="Your name"
                 />
               </div>
@@ -167,13 +167,13 @@ export function ContactSection() {
                 }`}
                 style={{ transitionDelay: "350ms" }}
               >
-                <label className="mb-1 block font-mono text-xs text-foreground/60 md:mb-2">Email</label>
+                <label className="mb-1 block font-mono text-xs text-foreground/60 sm:mb-2">Email</label>
                 <input
                   type="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 transition-all duration-300 focus:border-accent focus:outline-none focus:text-foreground md:py-2 md:text-base"
+                  className="w-full min-h-[44px] border-b border-foreground/30 bg-transparent py-2 text-base text-foreground placeholder:text-foreground/40 transition-all duration-300 focus:border-accent focus:outline-none focus:text-foreground sm:py-2.5"
                   placeholder="your@email.com"
                 />
               </div>
@@ -184,13 +184,13 @@ export function ContactSection() {
                 }`}
                 style={{ transitionDelay: "500ms" }}
               >
-                <label className="mb-1 block font-mono text-xs text-foreground/60 md:mb-2">Message</label>
+                <label className="mb-1 block font-mono text-xs text-foreground/60 sm:mb-2">Message</label>
                 <textarea
-                  rows={3}
+                  rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
-                  className="w-full border-b border-foreground/30 bg-transparent py-1.5 text-sm text-foreground placeholder:text-foreground/40 transition-all duration-300 focus:border-accent focus:outline-none focus:text-foreground md:py-2 md:text-base"
+                  className="w-full min-h-[120px] border-b border-foreground/30 bg-transparent py-2 text-base text-foreground placeholder:text-foreground/40 transition-all duration-300 focus:border-accent focus:outline-none focus:text-foreground resize-none sm:py-2.5"
                   placeholder="Tell us about your project..."
                 />
               </div>

@@ -29,37 +29,37 @@ export function FeaturedWorksSection() {
   ]
 
   return (
-    <section ref={ref} id="featured" className="relative w-full px-6 py-24 md:px-12 md:py-32">
+    <section ref={ref} id="featured" className="relative w-full px-4 py-16 sm:px-6 sm:py-20 md:px-12 md:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div
-          className={`mb-16 transition-all duration-700 ${
+          className={`mb-10 transition-all duration-700 sm:mb-12 md:mb-16 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-4 font-sans text-5xl font-light leading-[1.2] tracking-tight text-foreground md:text-6xl">
+          <h2 className="mb-3 font-sans text-3xl font-light leading-[1.2] tracking-tight text-foreground sm:text-4xl sm:mb-4 md:text-5xl lg:text-6xl">
             <span className="text-balance">Featured Work</span>
           </h2>
-          <p className="max-w-2xl text-lg leading-relaxed text-foreground/80 md:text-xl">
+          <p className="max-w-2xl text-sm leading-relaxed text-foreground/80 sm:text-base md:text-lg lg:text-xl">
             Discover the digital solutions we've crafted for forward-thinking businesses. From comprehensive e-commerce platforms that drive sales to secure communication systems that protect sensitive data, each project represents our commitment to excellence, innovation, and delivering measurable results.
           </p>
         </div>
 
         {/* Works Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:gap-12">
           {works.map((work, index) => (
             <Link
               key={work.id}
               href={work.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative overflow-hidden rounded-2xl border border-foreground/10 bg-card/30 backdrop-blur-sm transition-all duration-700 hover:border-foreground/30 hover:bg-card/50 hover:shadow-2xl hover:shadow-foreground/10 ${
+              className={`group relative overflow-hidden rounded-2xl border border-foreground/10 bg-card/30 backdrop-blur-sm transition-all duration-700 hover:border-foreground/30 hover:bg-card/50 hover:shadow-2xl hover:shadow-foreground/10 active:scale-[0.98] ${
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
               }`}
               style={{ transitionDelay: `${(index + 1) * 100}ms` }}
             >
               {/* Image */}
-              <div className="relative h-64 w-full overflow-hidden bg-foreground/5 md:h-80">
+              <div className="relative h-48 w-full overflow-hidden bg-foreground/5 sm:h-56 md:h-64 lg:h-80">
                 <img
                   src={work.image || "/placeholder.svg"}
                   alt={work.title}
@@ -69,18 +69,18 @@ export function FeaturedWorksSection() {
               </div>
 
               {/* Content */}
-              <div className="relative p-6 md:p-8">
+              <div className="relative p-5 sm:p-6 md:p-8">
                 <div className="mb-3 flex items-center gap-2">
-                  <span className="inline-block rounded-full bg-accent/20 px-3 py-1 text-xs font-medium text-accent transition-all duration-300 group-hover:bg-accent/40">
+                  <span className="inline-block rounded-full bg-accent/20 px-2.5 py-1 text-xs font-medium text-accent transition-all duration-300 group-hover:bg-accent/40 sm:px-3">
                     {work.category}
                   </span>
                 </div>
 
-                <h3 className="mb-2 font-sans text-2xl font-semibold text-foreground transition-all duration-300 group-hover:translate-x-1 md:text-3xl">
+                <h3 className="mb-2 font-sans text-xl font-semibold text-foreground transition-all duration-300 group-hover:translate-x-1 sm:text-2xl md:text-3xl">
                   {work.title}
                 </h3>
 
-                <p className="mb-6 text-sm leading-relaxed text-foreground/70 md:text-base">{work.description}</p>
+                <p className="mb-4 text-sm leading-relaxed text-foreground/70 sm:mb-6 sm:text-base">{work.description}</p>
 
                 {/* Tech Stack */}
                 <div className="mb-6 flex flex-wrap gap-2">
