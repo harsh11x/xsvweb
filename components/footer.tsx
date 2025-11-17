@@ -30,20 +30,20 @@ export function Footer() {
   return (
     <footer
       ref={ref}
-      className="relative w-full border-t border-foreground/10 bg-background/50 px-4 py-12 backdrop-blur-sm sm:px-6 sm:py-16 md:px-12 md:py-24"
+      className="relative w-full border-t border-foreground/10 bg-background/50 px-6 py-16 backdrop-blur-sm md:px-12 md:py-24"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-8 sm:gap-10 md:gap-12 md:grid-cols-5">
+        <div className="grid gap-12 md:grid-cols-5">
           {/* Brand */}
           <div
             className={`transition-all duration-700 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
             }`}
           >
-            <Link href="/" className="group mb-4 flex items-center gap-2 transition-transform active:scale-95 sm:mb-6">
-              <span className="font-sans text-xs font-semibold tracking-tight text-foreground sm:text-sm">XSV Outdoor Media</span>
+            <Link href="/" className="group mb-6 flex items-center gap-2 transition-transform hover:scale-105">
+              <span className="font-sans text-sm font-semibold tracking-tight text-foreground">XSV Outdoor Media</span>
             </Link>
-            <p className="text-xs leading-relaxed text-foreground/70 sm:text-sm">
+            <p className="text-sm leading-relaxed text-foreground/70">
               Transforming outdoor media into digital excellence through innovative solutions and strategic thinking.
             </p>
           </div>
@@ -55,11 +55,11 @@ export function Footer() {
             }`}
             style={{ transitionDelay: "100ms" }}
           >
-            <h3 className="mb-3 font-sans text-xs font-semibold uppercase tracking-tight text-foreground sm:mb-4 sm:text-sm">Services</h3>
-            <ul className="space-y-2 sm:space-y-3">
+            <h3 className="mb-4 font-sans text-sm font-semibold uppercase tracking-tight text-foreground">Services</h3>
+            <ul className="space-y-3">
               {serviceLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.path} className="group block min-h-[44px] text-xs text-foreground/70 transition-colors hover:text-foreground active:text-foreground sm:text-sm">
+                  <Link href={item.path} className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
                     {item.name}
                     <span className="block h-px w-0 bg-foreground/70 transition-all duration-300 group-hover:w-full" />
                   </Link>
@@ -75,11 +75,11 @@ export function Footer() {
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            <h3 className="mb-3 font-sans text-xs font-semibold uppercase tracking-tight text-foreground sm:mb-4 sm:text-sm">Company</h3>
-            <ul className="space-y-2 sm:space-y-3">
+            <h3 className="mb-4 font-sans text-sm font-semibold uppercase tracking-tight text-foreground">Company</h3>
+            <ul className="space-y-3">
               {companyLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.path} className="group block min-h-[44px] text-xs text-foreground/70 transition-colors hover:text-foreground active:text-foreground sm:text-sm">
+                  <Link href={item.path} className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
                     {item.name}
                     <span className="block h-px w-0 bg-foreground/70 transition-all duration-300 group-hover:w-full" />
                   </Link>
@@ -95,11 +95,11 @@ export function Footer() {
             }`}
             style={{ transitionDelay: "300ms" }}
           >
-            <h3 className="mb-3 font-sans text-xs font-semibold uppercase tracking-tight text-foreground sm:mb-4 sm:text-sm">Legal</h3>
-            <ul className="space-y-2 sm:space-y-3">
+            <h3 className="mb-4 font-sans text-sm font-semibold uppercase tracking-tight text-foreground">Legal</h3>
+            <ul className="space-y-3">
               {legalLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.path} className="group block min-h-[44px] text-xs text-foreground/70 transition-colors hover:text-foreground active:text-foreground sm:text-sm">
+                  <Link href={item.path} className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
                     {item.name}
                     <span className="block h-px w-0 bg-foreground/70 transition-all duration-300 group-hover:w-full" />
                   </Link>
@@ -115,19 +115,19 @@ export function Footer() {
             }`}
             style={{ transitionDelay: "400ms" }}
           >
-            <h3 className="mb-3 font-sans text-xs font-semibold uppercase tracking-tight text-foreground sm:mb-4 sm:text-sm">Contact</h3>
-            <ul className="space-y-2 sm:space-y-3">
+            <h3 className="mb-4 font-sans text-sm font-semibold uppercase tracking-tight text-foreground">Contact</h3>
+            <ul className="space-y-3">
               <li>
                 <a
                   href="mailto:xsvoutdoor.media@gmail.com"
-                  className="group block min-h-[44px] text-xs text-foreground/70 transition-colors hover:text-foreground active:text-foreground break-all sm:text-sm"
+                  className="group text-sm text-foreground/70 transition-colors hover:text-foreground"
                 >
                   xsvoutdoor.media@gmail.com
                   <span className="block h-px w-0 bg-foreground/70 transition-all duration-300 group-hover:w-full" />
                 </a>
               </li>
               <li>
-                <Link href="/#contact" className="group block min-h-[44px] text-xs text-foreground/70 transition-colors hover:text-foreground active:text-foreground sm:text-sm">
+                <Link href="/#contact" className="group text-sm text-foreground/70 transition-colors hover:text-foreground">
                   Get Support
                   <span className="block h-px w-0 bg-foreground/70 transition-all duration-300 group-hover:w-full" />
                 </Link>
@@ -137,21 +137,28 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="my-6 h-px bg-foreground/10 sm:my-8" />
+        <div className="my-8 h-px bg-foreground/10" />
 
         {/* Bottom */}
-        <div className="flex flex-col items-center justify-between gap-3 sm:gap-4 md:flex-row">
-          <p className="text-xs text-center text-foreground/60 sm:text-left">© 2025 XSV Outdoor Media. All rights reserved.</p>
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            {["Twitter", "LinkedIn", "Instagram", "Facebook"].map((social) => (
-              <a
-                key={social}
-                href="#"
-                className="group min-h-[44px] text-xs font-medium text-foreground/60 transition-colors hover:text-foreground active:text-foreground"
-              >
-                {social}
-              </a>
-            ))}
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <p className="text-xs text-foreground/60">© 2025 XSV Outdoor Media. All rights reserved.</p>
+          <div className="flex gap-6">
+            <a
+              href="https://x.com/xsvoutdoormedia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group text-xs font-medium text-foreground/60 transition-colors hover:text-foreground"
+            >
+              Twitter
+            </a>
+            <a
+              href="https://www.instagram.com/xsvoutdoormedia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group text-xs font-medium text-foreground/60 transition-colors hover:text-foreground"
+            >
+              Instagram
+            </a>
           </div>
         </div>
       </div>

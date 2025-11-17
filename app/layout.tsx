@@ -11,12 +11,6 @@ export const metadata: Metadata = {
   title: "XSV Outdoor Media | Digital Marketing & Web Development",
   description: "Professional web development, social media marketing, branding, and mobile app development services",
   generator: "v0.app",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
 }
 
 export default function RootLayout({

@@ -163,26 +163,26 @@ export function PricingSection() {
   return (
     <section
       ref={ref}
-      className="flex min-h-screen w-full flex-col justify-center px-4 py-16 sm:px-6 sm:py-20 md:px-12 md:py-24 lg:px-16"
+      className="flex min-h-screen w-full flex-col justify-center px-6 py-20 md:px-12 md:py-24 lg:px-16"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-8 transition-all duration-700 sm:mb-12 md:mb-16 ${
+          className={`mb-12 transition-all duration-700 md:mb-16 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-3xl font-light tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+          <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
             Pricing Plans
           </h2>
-          <p className="font-mono text-xs text-foreground/60 sm:text-sm md:text-base">
+          <p className="font-mono text-sm text-foreground/60 md:text-base">
             / Transparent packages for every business size
           </p>
         </div>
 
         {/* Website Packages */}
-        <div className="mb-12 sm:mb-16 md:mb-20">
-          <h3 className="mb-6 font-sans text-xl font-light text-foreground sm:mb-8 sm:text-2xl">Website Development</h3>
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
+        <div className="mb-20">
+          <h3 className="mb-8 font-sans text-2xl font-light text-foreground">Website Development</h3>
+          <div className="grid gap-6 md:grid-cols-3">
             {packages.website.map((pkg, i) => (
               <PricingCard key={i} package={pkg} index={i} isVisible={isVisible} delay={i * 100} />
             ))}
@@ -190,9 +190,9 @@ export function PricingSection() {
         </div>
 
         {/* Mobile App Packages */}
-        <div className="mb-12 sm:mb-16 md:mb-20">
-          <h3 className="mb-6 font-sans text-xl font-light text-foreground sm:mb-8 sm:text-2xl">Mobile App Development</h3>
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
+        <div className="mb-20">
+          <h3 className="mb-8 font-sans text-2xl font-light text-foreground">Mobile App Development</h3>
+          <div className="grid gap-6 md:grid-cols-3">
             {packages.mobile.map((pkg, i) => (
               <PricingCard key={i} package={pkg} index={i} isVisible={isVisible} delay={300 + i * 100} />
             ))}
@@ -200,14 +200,14 @@ export function PricingSection() {
         </div>
 
         {/* All-in-One Packages */}
-        <div className="mb-12 sm:mb-16 md:mb-20">
-          <div className="mb-6 sm:mb-8">
-            <h3 className="mb-3 font-sans text-xl font-light text-foreground sm:text-2xl md:text-3xl">All-in-One Packages</h3>
-            <p className="max-w-3xl text-sm leading-relaxed text-foreground/80 sm:text-base md:text-lg">
+        <div className="mb-20">
+          <div className="mb-8">
+            <h3 className="mb-4 font-sans text-2xl font-light text-foreground md:text-3xl">All-in-One Packages</h3>
+            <p className="max-w-3xl text-base leading-relaxed text-foreground/80 md:text-lg">
               Maximise your digital impact with our comprehensive combo packages. These bundled solutions offer exceptional value whilst ensuring seamless integration between your website and mobile applications, creating a unified brand experience across all platforms.
             </p>
           </div>
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-3">
             {packages.combo.map((pkg, i) => (
               <ComboPricingCard key={i} package={pkg} index={i} isVisible={isVisible} delay={600 + i * 100} />
             ))}
@@ -263,12 +263,12 @@ function PricingCard({
           </div>
         )}
 
-        <h4 className="mb-2 font-sans text-lg font-light text-foreground transition-all duration-300 group-hover:text-foreground sm:text-xl">
+        <h4 className="mb-2 font-sans text-xl font-light text-foreground transition-all duration-300 group-hover:text-foreground">
           {pkg.name}
         </h4>
 
-        <div className="mb-4 transition-all duration-300 sm:mb-6">
-          <span className="text-2xl font-light text-foreground group-hover:text-accent transition-colors duration-300 sm:text-3xl">
+        <div className="mb-6 transition-all duration-300">
+          <span className="text-3xl font-light text-foreground group-hover:text-accent transition-colors duration-300">
             {pkg.price}
           </span>
           {pkg.originalPrice && (
@@ -344,18 +344,18 @@ function ComboPricingCard({
           </div>
         )}
 
-        <h4 className="mb-2 font-sans text-lg font-light text-foreground transition-all duration-300 group-hover:text-foreground sm:text-xl md:text-2xl">
+        <h4 className="mb-2 font-sans text-xl font-light text-foreground transition-all duration-300 group-hover:text-foreground md:text-2xl">
           {pkg.name}
         </h4>
 
         <div className="mb-4 transition-all duration-300">
-          <span className="text-2xl font-light text-foreground group-hover:text-accent transition-colors duration-300 sm:text-3xl md:text-4xl">
+          <span className="text-3xl font-light text-foreground group-hover:text-accent transition-colors duration-300 md:text-4xl">
             {pkg.price}
           </span>
         </div>
 
-        <div className="mb-4 border-b border-foreground/20 pb-3 sm:pb-4">
-          <p className="text-xs font-semibold text-foreground/90 sm:text-sm md:text-base">{pkg.coreOffering}</p>
+        <div className="mb-4 border-b border-foreground/20 pb-4">
+          <p className="text-sm font-semibold text-foreground/90 md:text-base">{pkg.coreOffering}</p>
         </div>
 
         <ul className="mb-6 space-y-3">
@@ -373,7 +373,7 @@ function ComboPricingCard({
           ))}
         </ul>
 
-        <p className="mb-4 text-xs leading-relaxed text-foreground/70 sm:mb-6 sm:text-sm">{pkg.description}</p>
+        <p className="mb-6 text-xs leading-relaxed text-foreground/70 md:text-sm">{pkg.description}</p>
 
         <MagneticButton
           variant="secondary"

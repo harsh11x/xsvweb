@@ -4,7 +4,6 @@ import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
 import { MagneticButton } from "@/components/magnetic-button"
-import { MobileMenu } from "@/components/mobile-menu"
 import { Footer } from "@/components/footer"
 import { useRef, useEffect, useState, ReactNode } from "react"
 import Link from "next/link"
@@ -89,20 +88,20 @@ export function PageLayout({ children, title }: PageLayoutProps) {
       </div>
 
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-4 py-4 transition-all duration-1000 sm:px-6 sm:py-6 md:px-12 ${
+        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-6 transition-all duration-1000 md:px-12 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
         <Link
           href="/"
-          className="flex items-center gap-2 transition-transform active:scale-95"
+          className="flex items-center gap-2 transition-transform hover:scale-105"
         >
-          <span className="font-sans text-xs font-semibold tracking-tight text-foreground sm:text-sm md:text-base">
+          <span className="font-sans text-sm font-semibold tracking-tight text-foreground md:text-base">
             XSV Outdoor Media
           </span>
         </Link>
 
-        <div className="hidden items-center gap-4 md:flex lg:gap-8">
+        <div className="hidden items-center gap-8 md:flex">
           {["Home", "Featured", "Work", "Services", "Pricing", "About", "Contact"].map((item) => (
             <Link
               key={item}
@@ -115,30 +114,25 @@ export function PageLayout({ children, title }: PageLayoutProps) {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
-          <div className="hidden md:block">
-            <MagneticButton
-              variant="secondary"
-              onClick={() => {
-                if (window.location.pathname === "/") {
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-                } else {
-                  window.location.href = "/#contact"
-                }
-              }}
-            >
-              Get Started
-            </MagneticButton>
-          </div>
-          <MobileMenu />
-        </div>
+        <MagneticButton
+          variant="secondary"
+          onClick={() => {
+            if (window.location.pathname === "/") {
+              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+            } else {
+              window.location.href = "/#contact"
+            }
+          }}
+        >
+          Get Started
+        </MagneticButton>
       </nav>
 
       <div className={`relative z-10 transition-opacity duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
         {title && (
-          <section className="flex min-h-[50vh] w-full flex-col justify-center px-4 pt-20 pb-12 sm:px-6 sm:pt-24 sm:pb-16 md:px-12 md:pt-32 md:pb-24 md:min-h-[60vh]">
-            <div className="mx-auto w-full max-w-4xl">
-              <h1 className="mb-4 animate-in fade-in slide-in-from-bottom-8 font-sans text-3xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 sm:text-4xl sm:mb-6 md:text-5xl lg:text-6xl xl:text-7xl">
+          <section className="flex min-h-[60vh] w-full flex-col justify-center px-6 pt-24 pb-16 md:px-12 md:pt-32 md:pb-24">
+            <div className="mx-auto max-w-4xl">
+              <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-5xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-6xl lg:text-7xl">
                 {title}
               </h1>
             </div>
