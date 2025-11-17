@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: "XSV Outdoor Media <onboarding@resend.dev>", // You can change this after verifying your domain
+      from: "Contact Form <onboarding@resend.dev>", // Using Resend's test domain - verify your domain in Resend dashboard to use custom email
       to: "xsvoutdoor.media@gmail.com",
       replyTo: email,
       subject: `New Contact Form Submission from ${name}`,
@@ -65,24 +65,23 @@ This email was sent from the XSV Outdoor Media contact form.
     })
 
     if (error) {
-      console.error("Resend error:", error)
-      console.error("Error details:", JSON.stringify(error, null, 2))
+      console.error("Resend error:", JSON.stringify(error, null, 2))
       return NextResponse.json(
-        { error: `Failed to send email: ${error.message || "Unknown error"}` },
+        { error: error.message || "Failed to send email. Please try again later." },
         { status: 500 }
       )
     }
 
-    console.log("Email sent successfully:", data?.id)
+    console.log("Email sent successfully. Email ID:", data?.id)
+
     return NextResponse.json(
       { message: "Email sent successfully", id: data?.id },
       { status: 200 }
     )
   } catch (error) {
     console.error("Error sending email:", error)
-    console.error("Error stack:", error instanceof Error ? error.stack : "No stack trace")
     return NextResponse.json(
-      { error: `Failed to send email: ${error instanceof Error ? error.message : "Unknown error"}` },
+      { error: "Failed to send email. Please try again later." },
       { status: 500 }
     )
   }
