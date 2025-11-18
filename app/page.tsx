@@ -88,7 +88,7 @@ export default function Home() {
       </div>
 
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-6 transition-all duration-1000 md:px-12 ${
+        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-4 py-6 transition-all duration-1000 md:px-4 lg:px-6 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -124,7 +124,7 @@ export default function Home() {
 
       <div className={`relative z-10 transition-opacity duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
         {/* Hero Section */}
-        <section className="flex min-h-screen w-full flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
+        <section className="flex min-h-screen w-full flex-col justify-end px-4 pb-16 pt-24 md:px-4 md:pb-24 lg:px-6">
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
               <p className="font-mono text-xs text-foreground/90">Outdoor Media Marketing</p>

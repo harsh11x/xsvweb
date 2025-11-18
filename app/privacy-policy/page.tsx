@@ -72,7 +72,7 @@ export default function PrivacyPolicyPage() {
 
   return (
     <PageLayout title="Privacy Policy">
-      <section ref={ref} className="px-6 py-16 md:px-12 md:py-24">
+      <section ref={ref} className="px-4 py-16 md:px-4 md:py-24">
         <div className="mx-auto max-w-4xl">
           {/* Introduction */}
           <div

@@ -163,7 +163,7 @@ export function PricingSection() {
   return (
     <section
       ref={ref}
-      className="flex min-h-screen w-full flex-col justify-center px-6 py-20 md:px-12 md:py-24 lg:px-16"
+      className="flex min-h-screen w-full flex-col justify-center px-4 py-20 md:px-4 md:py-24 lg:px-6"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div

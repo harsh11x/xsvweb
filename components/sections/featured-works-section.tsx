@@ -29,7 +29,7 @@ export function FeaturedWorksSection() {
   ]
 
   return (
-    <section ref={ref} id="featured" className="relative w-full px-6 py-24 md:px-12 md:py-32">
+    <section ref={ref} id="featured" className="relative w-full px-4 py-24 md:px-4 md:py-32 lg:px-6">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div

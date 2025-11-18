@@ -42,7 +42,7 @@ export function ServicesSection() {
   return (
     <section
       ref={ref}
-      className="flex min-h-screen w-full flex-col justify-center px-6 py-20 md:px-12 md:py-24 lg:px-16"
+      className="flex min-h-screen w-full flex-col justify-center px-4 py-20 md:px-4 md:py-24 lg:px-6"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
@@ -58,7 +58,7 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
+        <div className="grid gap-8 md:grid-cols-2 md:gap-x-8 md:gap-y-12 lg:gap-x-12">
           {services.map((service, i) => (
             <ServiceCard key={i} service={service} index={i} isVisible={isVisible} />
           ))}

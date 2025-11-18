@@ -30,7 +30,7 @@ export function Footer() {
   return (
     <footer
       ref={ref}
-      className="relative w-full border-t border-foreground/10 bg-background/50 px-6 py-16 backdrop-blur-sm md:px-12 md:py-24"
+      className="relative w-full border-t border-foreground/10 bg-background/50 px-4 py-16 backdrop-blur-sm md:px-4 md:py-24 lg:px-6"
     >
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 md:grid-cols-5">

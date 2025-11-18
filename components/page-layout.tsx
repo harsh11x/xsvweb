@@ -88,7 +88,7 @@ export function PageLayout({ children, title }: PageLayoutProps) {
       </div>
 
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-6 py-6 transition-all duration-1000 md:px-12 ${
+        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-4 py-6 transition-all duration-1000 md:px-4 lg:px-6 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -130,7 +130,7 @@ export function PageLayout({ children, title }: PageLayoutProps) {
 
       <div className={`relative z-10 transition-opacity duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
         {title && (
-          <section className="flex min-h-[60vh] w-full flex-col justify-center px-6 pt-24 pb-16 md:px-12 md:pt-32 md:pb-24">
+          <section className="flex min-h-[60vh] w-full flex-col justify-center px-4 pt-24 pb-16 md:px-4 md:pt-32 md:pb-24 lg:px-6">
             <div className="mx-auto max-w-4xl">
               <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-5xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-6xl lg:text-7xl">
                 {title}
