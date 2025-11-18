@@ -163,26 +163,26 @@ export function PricingSection() {
   return (
     <section
       ref={ref}
-      className="flex min-h-screen w-full flex-col justify-center px-4 py-20 md:px-4 md:py-24 lg:px-6"
+      className="flex min-h-screen w-full flex-col justify-center px-4 py-12 md:py-20 md:px-4 lg:py-24 lg:px-6"
     >
       <div className="mx-auto w-full max-w-7xl">
         <div
-          className={`mb-12 transition-all duration-700 md:mb-16 ${
+          className={`mb-8 transition-all duration-700 md:mb-12 lg:mb-16 ${
             isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
           }`}
         >
-          <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
+          <h2 className="mb-2 font-sans text-3xl font-light tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
             Pricing Plans
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">
+          <p className="font-mono text-xs text-foreground/60 sm:text-sm md:text-base">
             / Transparent packages for every business size
           </p>
         </div>
 
         {/* Website Packages */}
-        <div className="mb-20">
-          <h3 className="mb-8 font-sans text-2xl font-light text-foreground">Website Development</h3>
-          <div className="grid gap-6 md:grid-cols-3">
+        <div className="mb-12 md:mb-16 lg:mb-20">
+          <h3 className="mb-4 font-sans text-xl font-light text-foreground sm:mb-6 sm:text-2xl">Website Development</h3>
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {packages.website.map((pkg, i) => (
               <PricingCard key={i} package={pkg} index={i} isVisible={isVisible} delay={i * 100} />
             ))}
@@ -190,9 +190,9 @@ export function PricingSection() {
         </div>
 
         {/* Mobile App Packages */}
-        <div className="mb-20">
-          <h3 className="mb-8 font-sans text-2xl font-light text-foreground">Mobile App Development</h3>
-          <div className="grid gap-6 md:grid-cols-3">
+        <div className="mb-12 md:mb-16 lg:mb-20">
+          <h3 className="mb-4 font-sans text-xl font-light text-foreground sm:mb-6 sm:text-2xl">Mobile App Development</h3>
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {packages.mobile.map((pkg, i) => (
               <PricingCard key={i} package={pkg} index={i} isVisible={isVisible} delay={300 + i * 100} />
             ))}
@@ -200,14 +200,14 @@ export function PricingSection() {
         </div>
 
         {/* All-in-One Packages */}
-        <div className="mb-20">
-          <div className="mb-8">
-            <h3 className="mb-4 font-sans text-2xl font-light text-foreground md:text-3xl">All-in-One Packages</h3>
-            <p className="max-w-3xl text-base leading-relaxed text-foreground/80 md:text-lg">
+        <div className="mb-12 md:mb-16 lg:mb-20">
+          <div className="mb-6 sm:mb-8">
+            <h3 className="mb-3 font-sans text-xl font-light text-foreground sm:mb-4 sm:text-2xl md:text-3xl">All-in-One Packages</h3>
+            <p className="max-w-3xl text-sm leading-relaxed text-foreground/80 sm:text-base md:text-lg">
               Maximise your digital impact with our comprehensive combo packages. These bundled solutions offer exceptional value whilst ensuring seamless integration between your website and mobile applications, creating a unified brand experience across all platforms.
             </p>
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {packages.combo.map((pkg, i) => (
               <ComboPricingCard key={i} package={pkg} index={i} isVisible={isVisible} delay={600 + i * 100} />
             ))}
@@ -220,8 +220,8 @@ export function PricingSection() {
           }`}
           style={{ transitionDelay: "900ms" }}
         >
-          <p className="mb-6 text-foreground/80">Need a custom solution? Let's build something together.</p>
-          <MagneticButton variant="primary" size="lg">
+          <p className="mb-4 sm:mb-6 text-sm sm:text-base text-foreground/80">Need a custom solution? Let's build something together.</p>
+          <MagneticButton variant="primary" size="lg" className="w-full sm:w-auto">
             Get a Quote
           </MagneticButton>
         </div>
@@ -250,42 +250,42 @@ function PricingCard({
   return (
     <div
       className={`group transition-all duration-700 ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-90 sm:translate-y-8 sm:opacity-0"
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="relative h-full rounded-xl border border-foreground/10 bg-card/50 backdrop-blur-sm p-6 transition-all duration-500 hover:border-foreground/30 hover:bg-card/80 hover:shadow-2xl hover:shadow-foreground/10 hover:-translate-y-2 md:p-8">
+      <div className="relative h-full rounded-xl border border-foreground/10 bg-card/50 backdrop-blur-sm p-4 transition-all duration-500 hover:border-foreground/30 hover:bg-card/80 hover:shadow-2xl hover:shadow-foreground/10 hover:-translate-y-2 sm:p-6 md:p-8">
         {pkg.badge && (
-          <div className="absolute top-6 right-6">
-            <span className="inline-block rounded-full bg-accent px-3 py-1 font-mono text-xs text-accent-foreground font-semibold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-accent/50">
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
+            <span className="inline-block rounded-full bg-accent px-2 py-0.5 sm:px-3 sm:py-1 font-mono text-[10px] sm:text-xs text-accent-foreground font-semibold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-accent/50">
               {pkg.badge}
             </span>
           </div>
         )}
 
-        <h4 className="mb-2 font-sans text-xl font-light text-foreground transition-all duration-300 group-hover:text-foreground">
+        <h4 className="mb-2 font-sans text-lg font-light text-foreground transition-all duration-300 group-hover:text-foreground sm:text-xl">
           {pkg.name}
         </h4>
 
-        <div className="mb-6 transition-all duration-300">
-          <span className="text-3xl font-light text-foreground group-hover:text-accent transition-colors duration-300">
+        <div className="mb-4 sm:mb-6 transition-all duration-300">
+          <span className="text-2xl sm:text-3xl font-light text-foreground group-hover:text-accent transition-colors duration-300">
             {pkg.price}
           </span>
           {pkg.originalPrice && (
-            <span className="ml-2 text-sm text-foreground/50 line-through">{pkg.originalPrice}</span>
+            <span className="ml-2 text-xs sm:text-sm text-foreground/50 line-through">{pkg.originalPrice}</span>
           )}
         </div>
 
-        <ul className="mb-8 space-y-3">
+        <ul className="mb-6 sm:mb-8 space-y-2 sm:space-y-3">
           {pkg.features.map((feature, i) => (
             <li
               key={i}
-              className="flex items-start gap-3 text-sm text-foreground/80 transition-all duration-300 group-hover:text-foreground/90"
+              className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-foreground/80 transition-all duration-300 group-hover:text-foreground/90"
               style={{
                 transitionDelay: `${i * 30}ms`,
               }}
             >
-              <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-125" />
+              <Check className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-accent flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-125" />
               <span>{feature}</span>
             </li>
           ))}
@@ -331,49 +331,49 @@ function ComboPricingCard({
   return (
     <div
       className={`group transition-all duration-700 ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+        isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-90 sm:translate-y-8 sm:opacity-0"
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="relative h-full rounded-xl border border-foreground/10 bg-card/50 backdrop-blur-sm p-6 transition-all duration-500 hover:border-foreground/30 hover:bg-card/80 hover:shadow-2xl hover:shadow-foreground/10 hover:-translate-y-2 md:p-8">
+      <div className="relative h-full rounded-xl border border-foreground/10 bg-card/50 backdrop-blur-sm p-4 transition-all duration-500 hover:border-foreground/30 hover:bg-card/80 hover:shadow-2xl hover:shadow-foreground/10 hover:-translate-y-2 sm:p-6 md:p-8">
         {pkg.badge && (
-          <div className="absolute top-6 right-6">
-            <span className="inline-block rounded-full bg-accent px-3 py-1 font-mono text-xs text-accent-foreground font-semibold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-accent/50">
+          <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
+            <span className="inline-block rounded-full bg-accent px-2 py-0.5 sm:px-3 sm:py-1 font-mono text-[10px] sm:text-xs text-accent-foreground font-semibold transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-accent/50">
               {pkg.badge}
             </span>
           </div>
         )}
 
-        <h4 className="mb-2 font-sans text-xl font-light text-foreground transition-all duration-300 group-hover:text-foreground md:text-2xl">
+        <h4 className="mb-2 font-sans text-lg font-light text-foreground transition-all duration-300 group-hover:text-foreground sm:text-xl md:text-2xl">
           {pkg.name}
         </h4>
 
-        <div className="mb-4 transition-all duration-300">
-          <span className="text-3xl font-light text-foreground group-hover:text-accent transition-colors duration-300 md:text-4xl">
+        <div className="mb-3 sm:mb-4 transition-all duration-300">
+          <span className="text-2xl sm:text-3xl font-light text-foreground group-hover:text-accent transition-colors duration-300 md:text-4xl">
             {pkg.price}
           </span>
         </div>
 
-        <div className="mb-4 border-b border-foreground/20 pb-4">
-          <p className="text-sm font-semibold text-foreground/90 md:text-base">{pkg.coreOffering}</p>
+        <div className="mb-3 sm:mb-4 border-b border-foreground/20 pb-3 sm:pb-4">
+          <p className="text-xs sm:text-sm font-semibold text-foreground/90 md:text-base">{pkg.coreOffering}</p>
         </div>
 
-        <ul className="mb-6 space-y-3">
+        <ul className="mb-4 sm:mb-6 space-y-2 sm:space-y-3">
           {pkg.features.map((feature, i) => (
             <li
               key={i}
-              className="flex items-start gap-3 text-sm text-foreground/80 transition-all duration-300 group-hover:text-foreground/90"
+              className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-foreground/80 transition-all duration-300 group-hover:text-foreground/90"
               style={{
                 transitionDelay: `${i * 30}ms`,
               }}
             >
-              <Check className="h-4 w-4 text-accent flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-125" />
+              <Check className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-accent flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-125" />
               <span>{feature}</span>
             </li>
           ))}
         </ul>
 
-        <p className="mb-6 text-xs leading-relaxed text-foreground/70 md:text-sm">{pkg.description}</p>
+        <p className="mb-4 sm:mb-6 text-[10px] sm:text-xs leading-relaxed text-foreground/70 md:text-sm">{pkg.description}</p>
 
         <MagneticButton
           variant="secondary"
