@@ -19,7 +19,7 @@ export function FeaturedWorksSection() {
     },
     {
       id: 2,
-      title: "Zephyr & Securities",
+      title: "Zephyrn Securities",
       description: "Highly secure communication platform with advanced encryption and decryption capabilities",
       category: "Security",
       link: "https://zephyrnsecurities.com",
