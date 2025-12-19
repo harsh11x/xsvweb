@@ -59,8 +59,8 @@ export default function Home() {
       >
         <Shader className="h-full w-full">
           <Swirl
-            colorA="#FF69B4"
-            colorB="#FFD700"
+            colorA="#001F3F"
+            colorB="#023020"
             speed={0.8}
             detail={0.8}
             blend={50}
@@ -72,11 +72,11 @@ export default function Home() {
             fineY={40}
           />
           <ChromaFlow
-            baseColor="#FF69B4"
-            upColor="#FFD700"
-            downColor="#FF69B4"
-            leftColor="#FFD700"
-            rightColor="#FF69B4"
+            baseColor="#001F3F"
+            upColor="#001F3F"
+            downColor="#0c4a34"
+            leftColor="#023020"
+            rightColor="#023020"
             intensity={0.9}
             radius={1.8}
             momentum={25}
