@@ -26,6 +26,24 @@ export function FeaturedWorksSection() {
       image: "/secure-communication-platform-encryption-technolog.jpg",
       technologies: ["Encryption", "Security", "Communication"],
     },
+    {
+      id: 3,
+      title: "PulseCal",
+      description: "Healthcare management platform integrating smart scheduling, telemedicine, and unified patient records",
+      category: "Healthcare",
+      link: "https://pulsecal.com",
+      image: "/placeholder.svg",
+      technologies: ["Telemedicine", "Management", "Analytics"],
+    },
+    {
+      id: 4,
+      title: "PawPerfect",
+      description: "Premium pet grooming service platform offering online booking for baths, cuts, and specialized treatments",
+      category: "Services",
+      link: "https://petgrooming-three.vercel.app",
+      image: "/placeholder.svg",
+      technologies: ["Booking", "Services", "Care"],
+    },
   ]
 
   return (
@@ -33,9 +51,8 @@ export function FeaturedWorksSection() {
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div
-          className={`mb-16 transition-all duration-700 ${
-            isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-          }`}
+          className={`mb-16 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+            }`}
         >
           <h2 className="mb-4 font-sans text-5xl font-light leading-[1.2] tracking-tight text-foreground md:text-6xl">
             <span className="text-balance">Featured Work</span>
@@ -53,9 +70,8 @@ export function FeaturedWorksSection() {
               href={work.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative overflow-hidden rounded-2xl border border-foreground/10 bg-card/30 backdrop-blur-sm transition-all duration-700 hover:border-foreground/30 hover:bg-card/50 hover:shadow-2xl hover:shadow-foreground/10 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-              }`}
+              className={`group relative overflow-hidden rounded-2xl border border-foreground/10 bg-card/30 backdrop-blur-sm transition-all duration-700 hover:border-foreground/30 hover:bg-card/50 hover:shadow-2xl hover:shadow-foreground/10 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                }`}
               style={{ transitionDelay: `${(index + 1) * 100}ms` }}
             >
               {/* Image */}
