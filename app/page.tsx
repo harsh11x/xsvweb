@@ -60,7 +60,7 @@ export default function Home() {
         <Shader className="h-full w-full">
           <Swirl
             colorA="#001F3F"
-            colorB="#FAF9F6"
+            colorB="#023020"
             speed={0.8}
             detail={0.8}
             blend={50}
@@ -74,9 +74,9 @@ export default function Home() {
           <ChromaFlow
             baseColor="#001F3F"
             upColor="#001F3F"
-            downColor="#d1d1d1"
-            leftColor="#FAF9F6"
-            rightColor="#FAF9F6"
+            downColor="#0c4a34"
+            leftColor="#023020"
+            rightColor="#023020"
             intensity={0.9}
             radius={1.8}
             momentum={25}
@@ -88,9 +88,8 @@ export default function Home() {
       </div>
 
       <nav
-        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-4 py-6 transition-all duration-1000 md:px-4 lg:px-6 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
+        className={`fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-4 py-6 transition-all duration-1000 md:px-4 lg:px-6 ${isLoaded ? "opacity-100" : "opacity-0"
+          }`}
       >
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
