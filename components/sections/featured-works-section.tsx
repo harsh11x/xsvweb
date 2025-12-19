@@ -2,13 +2,13 @@
 
 import { useReveal } from "@/hooks/use-reveal"
 import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
-import { useState, useEffect } from "react"
+import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react"
+import { useState, useEffect, useCallback } from "react"
 import useEmblaCarousel from "embla-carousel-react"
 
 export function FeaturedWorksSection() {
   const { ref, isVisible } = useReveal(0.2)
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" })
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" })
   const [selectedIndex, setSelectedIndex] = useState(0)
 
   const works = [
@@ -50,6 +50,21 @@ export function FeaturedWorksSection() {
     },
   ]
 
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev()
+  }, [emblaApi])
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
+  const scrollTo = useCallback(
+    (index: number) => {
+      if (emblaApi) emblaApi.scrollTo(index)
+    },
+    [emblaApi],
+  )
+
   useEffect(() => {
     if (!emblaApi) return
 
@@ -64,10 +79,6 @@ export function FeaturedWorksSection() {
       emblaApi.off("select", onSelect)
     }
   }, [emblaApi])
-
-  const scrollTo = (index: number) => {
-    if (emblaApi) emblaApi.scrollTo(index)
-  }
 
   return (
     <section ref={ref} id="featured" className="relative w-full px-4 py-24 md:px-4 md:py-32 lg:px-6">
@@ -88,8 +99,21 @@ export function FeaturedWorksSection() {
             </div>
 
             {/* Navigation Buttons (Desktop) */}
-            <div className="hidden gap-2 md:flex">
-              {/* Optional: Add prev/next buttons here if requested, currently user asked for indicators */}
+            <div className="hidden gap-3 md:flex">
+              <button
+                onClick={scrollPrev}
+                className="group flex h-12 w-12 items-center justify-center rounded-full border border-foreground/10 bg-background/50 backdrop-blur-sm transition-all hover:bg-foreground hover:text-background"
+                aria-label="Previous slide"
+              >
+                <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-0.5" />
+              </button>
+              <button
+                onClick={scrollNext}
+                className="group flex h-12 w-12 items-center justify-center rounded-full border border-foreground/10 bg-background/50 backdrop-blur-sm transition-all hover:bg-foreground hover:text-background"
+                aria-label="Next slide"
+              >
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
+              </button>
             </div>
           </div>
         </div>
@@ -100,57 +124,59 @@ export function FeaturedWorksSection() {
             }`}
           ref={emblaRef}
         >
-          <div className="flex touch-pan-y gap-6 md:gap-8">
+          <div className="flex touch-pan-y gap-8">
             {works.map((work) => (
-              <div key={work.id} className="min-w-0 flex-[0_0_100%] md:flex-[0_0_60%] lg:flex-[0_0_50%]">
+              <div key={work.id} className="min-w-0 flex-[0_0_100%]">
                 <Link
                   href={work.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative block h-full overflow-hidden rounded-2xl border border-foreground/10 bg-card/30 backdrop-blur-sm transition-all duration-500 hover:border-foreground/30 hover:bg-card/50"
+                  className="group relative block overflow-hidden rounded-3xl border border-foreground/10 bg-card/30 backdrop-blur-sm transition-all duration-500 hover:border-foreground/30 hover:bg-card/50"
                 >
-                  {/* Image */}
-                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-foreground/5">
-                    <img
-                      src={work.image || "/placeholder.svg"}
-                      alt={work.title}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
-                  </div>
-
-                  {/* Content */}
-                  <div className="relative p-6 md:p-8">
-                    <div className="mb-3 flex items-center gap-2">
-                      <span className="inline-block rounded-full bg-accent/20 px-3 py-1 text-xs font-medium text-accent transition-all duration-300 group-hover:bg-accent/40">
-                        {work.category}
-                      </span>
+                  <div className="flex flex-col md:flex-row">
+                    {/* Image (Left Side) */}
+                    <div className="relative aspect-video w-full overflow-hidden bg-foreground/5 md:aspect-auto md:w-3/5">
+                      <img
+                        src={work.image || "/placeholder.svg"}
+                        alt={work.title}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent md:bg-gradient-to-r" />
                     </div>
 
-                    <h3 className="mb-2 font-sans text-2xl font-semibold text-foreground transition-all duration-300 group-hover:translate-x-1 md:text-3xl">
-                      {work.title}
-                    </h3>
-
-                    <p className="mb-6 line-clamp-2 text-sm leading-relaxed text-foreground/70 md:text-base">
-                      {work.description}
-                    </p>
-
-                    {/* Tech Stack */}
-                    <div className="mb-6 flex flex-wrap gap-2">
-                      {work.technologies.slice(0, 3).map((tech, i) => (
-                        <span
-                          key={tech}
-                          className="rounded-full bg-foreground/5 px-3 py-1 text-xs text-foreground/70"
-                        >
-                          {tech}
+                    {/* Content (Right Side) */}
+                    <div className="relative flex flex-col justify-center p-6 md:w-2/5 md:p-10 lg:p-12">
+                      <div className="mb-6 flex items-center gap-2">
+                        <span className="inline-block rounded-full bg-accent/20 px-3 py-1 text-xs font-medium text-accent transition-all duration-300 group-hover:bg-accent/40">
+                          {work.category}
                         </span>
-                      ))}
-                    </div>
+                      </div>
 
-                    {/* CTA */}
-                    <div className="flex items-center gap-2 font-sans font-semibold text-foreground transition-all duration-300 group-hover:gap-3">
-                      Visit Project
-                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                      <h3 className="mb-4 font-sans text-3xl font-semibold text-foreground transition-all duration-300 group-hover:translate-x-1 md:text-4xl">
+                        {work.title}
+                      </h3>
+
+                      <p className="mb-8 text-base leading-relaxed text-foreground/70 md:text-lg">
+                        {work.description}
+                      </p>
+
+                      {/* Tech Stack */}
+                      <div className="mb-8 flex flex-wrap gap-2">
+                        {work.technologies.map((tech, i) => (
+                          <span
+                            key={tech}
+                            className="rounded-full bg-foreground/5 px-3 py-1 text-xs text-foreground/70"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* CTA */}
+                      <div className="flex items-center gap-2 font-sans text-lg font-semibold text-foreground transition-all duration-300 group-hover:gap-3">
+                        Visit Project
+                        <ArrowUpRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                      </div>
                     </div>
                   </div>
                 </Link>
