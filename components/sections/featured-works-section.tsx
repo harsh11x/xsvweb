@@ -36,7 +36,7 @@ export function FeaturedWorksSection() {
       description: "Healthcare management platform integrating smart scheduling, telemedicine, and unified patient records",
       category: "Healthcare",
       link: "https://pulsecal.com",
-      image: "https://www.pulsecal.com/og.png",
+      image: "/pulsecal-showcase.png",
       technologies: ["Telemedicine", "Management", "Analytics"],
     },
     {
@@ -45,7 +45,7 @@ export function FeaturedWorksSection() {
       description: "Premium pet grooming service platform offering online booking for baths, cuts, and specialized treatments",
       category: "Services",
       link: "https://petgrooming-three.vercel.app",
-      image: "/placeholder.svg",
+      image: "/pawperfect-showcase.png",
       technologies: ["Booking", "Services", "Care"],
     },
   ]
