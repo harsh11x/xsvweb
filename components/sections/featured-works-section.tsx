@@ -27,7 +27,7 @@ export function FeaturedWorksSection() {
       description: "Highly secure communication platform with advanced encryption and decryption capabilities",
       category: "Security",
       link: "https://zephyrnsecurities.com",
-      image: "/secure-communication-platform-encryption-technolog.jpg",
+      image: "/zephyrn-showcase.png",
       technologies: ["Encryption", "Security", "Communication"],
     },
     {
