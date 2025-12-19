@@ -41,6 +41,15 @@ export function FeaturedWorksSection() {
     },
     {
       id: 4,
+      title: "VedicMate",
+      description: "AI-powered Vedic astrology platform offering personalized birth chart analysis and compatibility matching",
+      category: "Astrology",
+      link: "https://vedicmate.com",
+      image: "/vedicmate-showcase.png",
+      technologies: ["AI", "Astrology", "Next.js"],
+    },
+    {
+      id: 5,
       title: "PawPerfect",
       description: "Premium pet grooming service platform offering online booking for baths, cuts, and specialized treatments",
       category: "Services",
