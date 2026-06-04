@@ -2,12 +2,10 @@
 
 import type React from "react"
 
-import { useReveal } from "@/hooks/use-reveal"
 import { Globe, Share2, Palette, Smartphone, CheckCircle2 } from "lucide-react"
+import { motion } from "framer-motion"
 
 export function ServicesSection() {
-  const { ref, isVisible } = useReveal(0.3)
-
   const services = [
     {
       title: "Website Building",
@@ -40,15 +38,13 @@ export function ServicesSection() {
   ]
 
   return (
-    <section
-      ref={ref}
-      className="flex min-h-screen w-full flex-col justify-center px-4 py-20 md:px-4 md:py-24 lg:px-6"
-    >
+    <section className="flex min-h-screen w-full flex-col justify-center px-4 py-20 md:px-4 md:py-24 lg:px-6">
       <div className="mx-auto w-full max-w-7xl">
-        <div
-          className={`mb-12 transition-all duration-700 md:mb-16 ${
-            isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
-          }`}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12 md:mb-16"
         >
           <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
             Our Services
@@ -56,11 +52,11 @@ export function ServicesSection() {
           <p className="font-mono text-sm text-foreground/60 md:text-base">
             / Complete digital solutions for your business
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid gap-8 md:grid-cols-2 md:gap-x-8 md:gap-y-12 lg:gap-x-12">
           {services.map((service, i) => (
-            <ServiceCard key={i} service={service} index={i} isVisible={isVisible} />
+            <ServiceCard key={i} service={service} index={i} />
           ))}
         </div>
       </div>
@@ -71,7 +67,6 @@ export function ServicesSection() {
 function ServiceCard({
   service,
   index,
-  isVisible,
 }: {
   service: {
     title: string
@@ -81,18 +76,17 @@ function ServiceCard({
     color: string
   }
   index: number
-  isVisible: boolean
 }) {
   const IconComponent = service.icon
 
   return (
-    <div
-      className={`group transition-all duration-700 ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-      }`}
-      style={{
-        transitionDelay: `${index * 150}ms`,
-      }}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.15 }}
+      whileHover={{ scale: 1.02 }}
+      className="group"
     >
       <div className="relative rounded-2xl border border-foreground/10 bg-card/20 backdrop-blur-sm p-6 transition-all duration-500 group-hover:border-foreground/30 group-hover:bg-card/40 md:p-8">
         {/* Line animation */}
@@ -127,6 +121,6 @@ function ServiceCard({
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   )
 }
