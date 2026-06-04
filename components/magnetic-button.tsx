@@ -2,6 +2,7 @@
 
 import type React from "react"
 import { useRef } from "react"
+import { motion, useMotionValue, useSpring } from "framer-motion"
 
 interface MagneticButtonProps {
   children: React.ReactNode
@@ -19,34 +20,26 @@ export function MagneticButton({
   onClick,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLButtonElement>(null)
-  const positionRef = useRef({ x: 0, y: 0 })
-  const rafRef = useRef<number>()
+
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
+  const springX = useSpring(x, { stiffness: 150, damping: 15, mass: 0.1 })
+  const springY = useSpring(y, { stiffness: 150, damping: 15, mass: 0.1 })
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!ref.current) return
 
     const rect = ref.current.getBoundingClientRect()
-    const x = e.clientX - rect.left - rect.width / 2
-    const y = e.clientY - rect.top - rect.height / 2
+    const relativeX = e.clientX - rect.left - rect.width / 2
+    const relativeY = e.clientY - rect.top - rect.height / 2
 
-    positionRef.current = { x: x * 0.15, y: y * 0.15 }
-
-    if (rafRef.current) cancelAnimationFrame(rafRef.current)
-    rafRef.current = requestAnimationFrame(() => {
-      if (ref.current) {
-        ref.current.style.transform = `translate3d(${positionRef.current.x}px, ${positionRef.current.y}px, 0)`
-      }
-    })
+    x.set(relativeX * 0.15)
+    y.set(relativeY * 0.15)
   }
 
   const handleMouseLeave = () => {
-    positionRef.current = { x: 0, y: 0 }
-    if (rafRef.current) cancelAnimationFrame(rafRef.current)
-    rafRef.current = requestAnimationFrame(() => {
-      if (ref.current) {
-        ref.current.style.transform = "translate3d(0px, 0px, 0)"
-      }
-    })
+    x.set(0)
+    y.set(0)
   }
 
   const variants = {
@@ -63,7 +56,7 @@ export function MagneticButton({
   }
 
   return (
-    <button
+    <motion.button
       ref={ref}
       onClick={onClick}
       onMouseMove={handleMouseMove}
@@ -76,11 +69,12 @@ export function MagneticButton({
         ${className}
       `}
       style={{
-        transform: "translate3d(0px, 0px, 0)",
+        x: springX,
+        y: springY,
         contain: "layout style paint",
       }}
     >
       <span className="relative z-10">{children}</span>
-    </button>
+    </motion.button>
   )
 }
