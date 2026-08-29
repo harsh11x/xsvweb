@@ -21,11 +21,11 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: () => void
               }`}
             >
               <h2 className="mb-3 font-sans text-3xl font-light leading-[1.1] tracking-tight text-foreground md:mb-4 md:text-6xl lg:text-7xl">
-                Delivering Digital
+                We Don't Just Build.
                 <br />
-                Excellence for
+                We Engineer
                 <br />
-                <span className="text-foreground/40">Your Business</span>
+                <span className="text-foreground/40">Digital Dominance.</span>
               </h2>
             </div>
 
@@ -36,10 +36,10 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: () => void
               style={{ transitionDelay: "200ms" }}
             >
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                XSV Outdoor Media is a full-service digital marketing agency specializing in web development, mobile app building, social media marketing, and comprehensive branding solutions. We transform businesses through innovative digital experiences that drive growth and build lasting customer relationships.
+                We are a premium digital product studio specialising in enterprise-grade web platforms, native mobile applications, encrypted communications systems, AI-powered solutions, and luxury e-commerce experiences. Every product we ship is engineered to the highest standard — because our clients deserve nothing less.
               </p>
               <p className="max-w-md text-sm leading-relaxed text-foreground/90 md:text-lg">
-                With a proven track record of delivering exceptional results, we combine creative vision with technical expertise to help businesses establish and enhance their online presence. From startups launching their first website to established companies modernizing their digital strategy, we're your trusted partner in digital excellence.
+                With a portfolio spanning deep-tech AI, healthcare SaaS, campus fintech, and heritage fashion — we bring a rare combination of technical depth and creative vision. We don't chase trends; we set them. And we don't just deliver projects — we deliver competitive advantages.
               </p>
             </div>
           </div>
@@ -47,9 +47,9 @@ export function AboutSection({ scrollToSection }: { scrollToSection?: () => void
           {/* Right side - Stats */}
           <div className="flex flex-col justify-center space-y-6 md:space-y-12">
             {[
-              { value: "500+", label: "Projects", sublabel: "Delivered successfully" },
-              { value: "5", label: "Years", sublabel: "In digital marketing" },
-              { value: "100+", label: "Happy Clients", sublabel: "Across industries" },
+              { value: "500+", label: "Projects", sublabel: "Delivered to exacting standards" },
+              { value: "7", label: "Industries", sublabel: "AI, Health, Fintech, Retail & more" },
+              { value: "98%", label: "Client Retention", sublabel: "They come back because we deliver" },
             ].map((stat, i) => (
               <div
                 key={i}

@@ -11,31 +11,31 @@ export default function AboutUsPage() {
   const values = [
     {
       icon: Target,
-      title: "Results-Driven",
-      description: "We measure success by the impact we create for our clients. Every project is approached with clear objectives and a focus on delivering measurable results that drive business growth.",
+      title: "Precision Engineering",
+      description: "We don't approximate — we engineer. Every line of code, every design decision, every architectural choice is made with surgical precision to deliver products that perform flawlessly under real-world conditions.",
     },
     {
       icon: Lightbulb,
-      title: "Innovation First",
-      description: "We stay at the forefront of technology and design trends, constantly exploring new tools and techniques to deliver cutting-edge solutions that give our clients a competitive advantage.",
+      title: "Relentless Innovation",
+      description: "We operate at the bleeding edge of technology — from AI model optimization to zero-knowledge encryption. Our clients benefit from capabilities that most agencies can't even conceptualize, let alone execute.",
     },
     {
       icon: Users,
-      title: "Client Partnership",
-      description: "We believe in building long-term relationships, not just completing projects. Your success is our success, and we're committed to being a trusted partner in your digital journey.",
+      title: "Strategic Partnership",
+      description: "We don't take orders — we architect advantages. Every engagement is a strategic collaboration where we challenge assumptions, push boundaries, and deliver outcomes that fundamentally shift our clients' competitive position.",
     },
     {
       icon: Award,
-      title: "Excellence in Execution",
-      description: "Quality is never compromised. From the initial concept to final delivery, we maintain the highest standards in design, development, and client service.",
+      title: "Uncompromising Standards",
+      description: "Quality is not negotiable. From enterprise-grade security to luxury-grade aesthetics, we maintain standards that others consider excessive — because our clients deserve products that set benchmarks, not follow them.",
     },
   ]
 
   const stats = [
-    { value: "500+", label: "Projects Delivered", sublabel: "Successfully completed" },
-    { value: "5", label: "Years of Excellence", sublabel: "In digital marketing" },
-    { value: "100+", label: "Happy Clients", sublabel: "Across industries" },
-    { value: "98%", label: "Client Satisfaction", sublabel: "Rate our services highly" },
+    { value: "500+", label: "Projects Delivered", sublabel: "To exacting standards" },
+    { value: "7", label: "Industries Served", sublabel: "AI, Health, Fintech & more" },
+    { value: "98%", label: "Client Retention", sublabel: "They come back because we deliver" },
+    { value: "100%", label: "Commitment", sublabel: "To excellence, always" },
   ]
 
   return (
@@ -44,15 +44,19 @@ export default function AboutUsPage() {
         <div className="mx-auto max-w-7xl">
           {/* Hero */}
           <div
-            className={`mb-16 transition-all duration-700 ${
-              isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
-            }`}
+            className={`mb-16 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
+              }`}
           >
             <p className="mb-6 max-w-3xl text-lg leading-relaxed text-foreground/90 md:text-xl">
-              XSV Outdoor Media is a full-service digital marketing agency specializing in web development, mobile app building, social media marketing, and comprehensive branding solutions. We transform businesses through innovative digital experiences that drive growth and build lasting customer relationships.
+              We are XSV Outdoor Media — a premium digital product studio specialising in enterprise-grade web platforms,
+              native mobile applications, encrypted communications systems, AI-powered solutions, and luxury e-commerce
+              experiences. We don't chase trends; we engineer the future.
             </p>
             <p className="max-w-3xl text-base leading-relaxed text-foreground/80 md:text-lg">
-              Founded with a vision to bridge the gap between traditional outdoor media and modern digital excellence, we've grown into a trusted partner for businesses seeking to establish or enhance their online presence. Our team combines creative vision with technical expertise to deliver solutions that not only look great but perform exceptionally.
+              Founded with a singular vision — to bridge the gap between visionary ideas and exceptional digital execution —
+              we've grown into a trusted partner for businesses that refuse to settle. Our portfolio spans deep-tech AI,
+              healthcare SaaS, campus fintech, encrypted security, and heritage fashion e-commerce. Every product we ship
+              reflects our uncompromising commitment to precision, innovation, and measurable outcomes.
             </p>
           </div>
 
@@ -61,9 +65,8 @@ export default function AboutUsPage() {
             {stats.map((stat, i) => (
               <div
                 key={i}
-                className={`rounded-xl border border-foreground/10 bg-card/20 backdrop-blur-sm p-6 text-center transition-all duration-700 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-                }`}
+                className={`rounded-xl border border-foreground/10 bg-card/20 backdrop-blur-sm p-6 text-center transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                  }`}
                 style={{ transitionDelay: `${200 + i * 100}ms` }}
               >
                 <div className="mb-2 text-3xl font-light text-foreground md:text-4xl lg:text-5xl">
@@ -80,7 +83,7 @@ export default function AboutUsPage() {
           {/* Values */}
           <div className="mb-24">
             <h2 className="mb-12 font-sans text-4xl font-light tracking-tight text-foreground md:text-5xl">
-              Our Values
+              Our Standards
             </h2>
             <div className="grid gap-8 md:grid-cols-2">
               {values.map((value, i) => {
@@ -88,9 +91,8 @@ export default function AboutUsPage() {
                 return (
                   <div
                     key={i}
-                    className={`group transition-all duration-700 ${
-                      isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-                    }`}
+                    className={`group transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                      }`}
                     style={{ transitionDelay: `${600 + i * 100}ms` }}
                   >
                     <div className="relative rounded-2xl border border-foreground/10 bg-card/20 backdrop-blur-sm p-6 transition-all duration-500 group-hover:border-foreground/30 group-hover:bg-card/40 md:p-8">
@@ -113,35 +115,37 @@ export default function AboutUsPage() {
           {/* Mission */}
           <div className="mb-24">
             <div
-              className={`rounded-2xl border border-foreground/10 bg-card/20 backdrop-blur-sm p-8 md:p-12 ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-              } transition-all duration-700`}
+              className={`rounded-2xl border border-foreground/10 bg-card/20 backdrop-blur-sm p-8 md:p-12 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                } transition-all duration-700`}
               style={{ transitionDelay: "1000ms" }}
             >
               <h2 className="mb-6 font-sans text-3xl font-light tracking-tight text-foreground md:text-4xl">
                 Our Mission
               </h2>
               <p className="mb-4 max-w-3xl text-base leading-relaxed text-foreground/90 md:text-lg">
-                To empower businesses of all sizes with world-class digital solutions that drive growth, enhance brand presence, and create meaningful connections with their audiences. We believe that exceptional digital experiences are the foundation of modern business success.
+                To engineer digital products that don't just meet expectations — they obliterate them. We exist to give
+                ambitious businesses the technical firepower and creative firepower they need to dominate their markets,
+                delight their users, and build something genuinely extraordinary.
               </p>
               <p className="max-w-3xl text-base leading-relaxed text-foreground/80 md:text-lg">
-                Whether you're a startup launching your first website or an established company looking to modernize your digital presence, we're here to help you achieve your goals through innovative design, strategic thinking, and flawless execution.
+                Whether you're a deep-tech startup building the next AI breakthrough, a healthcare provider transforming
+                patient care, or a heritage brand bringing centuries of craftsmanship to a global audience — we bring
+                the precision, the vision, and the relentless execution that turns ambitious ideas into market-leading products.
               </p>
             </div>
           </div>
 
           {/* CTA */}
           <div
-            className={`rounded-2xl border border-foreground/10 bg-card/20 backdrop-blur-sm p-8 text-center md:p-12 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-            } transition-all duration-700`}
+            className={`rounded-2xl border border-foreground/10 bg-card/20 backdrop-blur-sm p-8 text-center md:p-12 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+              } transition-all duration-700`}
             style={{ transitionDelay: "1200ms" }}
           >
             <h2 className="mb-4 font-sans text-3xl font-light tracking-tight text-foreground md:text-4xl">
-              Let's Work Together
+              Ready to Build Something Exceptional?
             </h2>
             <p className="mb-8 text-foreground/80">
-              Ready to transform your digital presence? Get in touch and let's discuss your project.
+              Let&apos;s architect a digital product that sets a new standard in your industry.
             </p>
             <MagneticButton
               size="lg"
@@ -156,4 +160,3 @@ export default function AboutUsPage() {
     </PageLayout>
   )
 }
-

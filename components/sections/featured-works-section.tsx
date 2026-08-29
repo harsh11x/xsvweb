@@ -14,48 +14,66 @@ export function FeaturedWorksSection() {
   const works = [
     {
       id: 1,
-      title: "Punjabi Jutti & Fulkari",
-      description: "E-commerce platform showcasing authentic Punjabi traditional clothing and embroidered textiles",
-      category: "E-commerce",
-      link: "https://punjabijuttiandfulkari.com",
-      image: "/punjabi-traditional-clothing-ecommerce-store.jpg",
-      technologies: ["E-commerce", "Product Showcase", "Payments"],
+      title: "Remap Studios",
+      description: "An enterprise-grade AI machine unlearning platform that surgically removes redundant knowledge from neural networks — shrinking model size by up to 50%, slashing compute costs by 42%, and accelerating inference — all without sacrificing accuracy. Built for research labs and companies pushing the boundaries of efficient AI.",
+      category: "AI / Deep Tech",
+      link: "https://remapstudios.vercel.app/",
+      image: "/placeholder.svg",
+      technologies: ["Machine Learning", "Neural Architecture", "Python", "HuggingFace"],
     },
     {
       id: 2,
-      title: "Zephyrn Securities",
-      description: "Highly secure communication platform with advanced encryption and decryption capabilities",
-      category: "Security",
-      link: "https://zephyrnsecurities.com",
+      title: "Zephyrn",
+      description: "A zero-knowledge encrypted communications platform delivering end-to-end encrypted calls, messages, and file transfers. Keys stay exclusively on the user's device — making data access a mathematical impossibility, not a marketing promise. Engineered for enterprises and individuals who demand absolute privacy.",
+      category: "Security / Encryption",
+      link: "https://zephywebsite.vercel.app/",
       image: "/zephyrn-showcase.png",
-      technologies: ["Encryption", "Security", "Communication"],
+      technologies: ["E2E Encryption", "Zero Knowledge", "WebRTC", "Real-time Comms"],
     },
     {
       id: 3,
-      title: "PulseCal",
-      description: "Healthcare management platform integrating smart scheduling, telemedicine, and unified patient records",
-      category: "Healthcare",
-      link: "https://pulsecal.com",
-      image: "/pulsecal-showcase.png",
-      technologies: ["Telemedicine", "Management", "Analytics"],
+      title: "Punjab Heritage",
+      description: "A premium e-commerce destination for authentic Punjabi handcrafted leather juttis and exquisite phulkari textiles. Every piece is curated from master artisans preserving centuries-old heritage — brought to life with a luxurious shopping experience, immersive product storytelling, and seamless checkout across India.",
+      category: "E-commerce / Heritage",
+      link: "https://punjabiecom.vercel.app/",
+      image: "/punjabi-traditional-clothing-ecommerce-store.jpg",
+      technologies: ["E-commerce", "Product Showcase", "Payments", "Inventory"],
     },
     {
       id: 4,
-      title: "VedicMate",
-      description: "AI-powered Vedic astrology platform offering personalized birth chart analysis and compatibility matching",
-      category: "Astrology",
-      link: "https://vedicmate.com",
-      image: "/vedicmate-showcase.png",
-      technologies: ["AI", "Astrology", "Next.js"],
+      title: "UniTap",
+      description: "A smart campus fintech platform revolutionising university payments through RFID-based student wallets. Enables cashless transactions across campus vendors, delivers real-time analytics to administrators, and gives institutions complete visibility into vendor performance and student spending — all from a single dashboard.",
+      category: "Fintech / EdTech",
+      link: "https://unitap-beta.vercel.app/",
+      image: "/placeholder.svg",
+      technologies: ["RFID", "Fintech", "Analytics", "Payment Systems"],
     },
     {
       id: 5,
-      title: "PawPerfect",
-      description: "Premium pet grooming service platform offering online booking for baths, cuts, and specialized treatments",
-      category: "Services",
-      link: "https://petgrooming-three.vercel.app",
-      image: "/pawperfect-showcase.png",
-      technologies: ["Booking", "Services", "Care"],
+      title: "PulseCal",
+      description: "An enterprise healthcare SaaS platform trusted by 500+ providers, unifying appointment scheduling, telemedicine, patient records, and billing into one intelligent system. HIPAA-compliant architecture with AI-powered no-show reduction, real-time queue management, and actionable analytics — designed to give clinics complete operational control.",
+      category: "Healthcare / SaaS",
+      link: "https://www.pulsecal.com/",
+      image: "/pulsecal-showcase.png",
+      technologies: ["Telemedicine", "HIPAA", "AI Scheduling", "Analytics"],
+    },
+    {
+      id: 6,
+      title: "Cultural Hatti",
+      description: "A heritage fashion e-commerce platform celebrating India's artisan legacy — handcrafted sarees, designer suits, artisan jewelry, and timeless accessories sourced from 100+ master craftspeople across 29 states. Pan-India free shipping, immersive storytelling, and a shopping experience that honours 5,000 years of cultural craftsmanship.",
+      category: "E-commerce / Fashion",
+      link: "https://www.culturalhatti.com/",
+      image: "/placeholder.svg",
+      technologies: ["E-commerce", "Product Catalog", "Payments", "Logistics"],
+    },
+    {
+      id: 7,
+      title: "Walk In Square",
+      description: "A premium retail development platform designed for modern shopping destinations. Combining elegant storefront experiences with sophisticated tenant management, analytics dashboards, and visitor engagement tools — setting a new benchmark for how retail spaces are experienced, managed, and grown.",
+      category: "Retail / Real Estate",
+      link: "https://walkinsquare.vercel.app/",
+      image: "/placeholder.svg",
+      technologies: ["Retail Platform", "Analytics", "Dashboard", "UX Design"],
     },
   ]
 
@@ -82,7 +100,7 @@ export function FeaturedWorksSection() {
     }
 
     emblaApi.on("select", onSelect)
-    onSelect() // Initial check
+    onSelect()
 
     return () => {
       emblaApi.off("select", onSelect)
@@ -103,7 +121,8 @@ export function FeaturedWorksSection() {
                 <span className="text-balance">Featured Work</span>
               </h2>
               <p className="max-w-2xl text-lg leading-relaxed text-foreground/80 md:text-xl">
-                Discover the digital solutions we've crafted for forward-thinking businesses.
+                A curated showcase of high-calibre digital products we&apos;ve engineered for discerning brands —
+                from deep-tech platforms to luxury e-commerce experiences.
               </p>
             </div>
 
@@ -171,7 +190,7 @@ export function FeaturedWorksSection() {
 
                       {/* Tech Stack */}
                       <div className="mb-8 flex flex-wrap gap-2">
-                        {work.technologies.map((tech, i) => (
+                        {work.technologies.map((tech) => (
                           <span
                             key={tech}
                             className="rounded-full bg-foreground/5 px-3 py-1 text-xs text-foreground/70"

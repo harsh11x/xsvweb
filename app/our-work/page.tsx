@@ -11,45 +11,66 @@ export default function OurWorkPage() {
   const projects = [
     {
       number: "01",
-      title: "Punjabi Jutti & Fulkari",
-      category: "E-commerce Platform",
-      year: "2024",
-      description: "A comprehensive e-commerce solution for traditional Punjabi clothing and textiles, featuring seamless shopping experiences and secure payment processing.",
-      link: "https://punjabijuttiandfulkari.com",
-      technologies: ["E-commerce", "Product Management", "Payments"],
+      title: "Remap Studios",
+      category: "AI / Deep Tech Platform",
+      year: "2025",
+      description: "An enterprise machine unlearning platform that surgically removes redundant neurons from AI models — achieving up to 50% size reduction and 42% compute savings while retaining 99.2% accuracy. Built for research labs and companies demanding efficient, production-ready AI.",
+      link: "https://remapstudios.vercel.app/",
+      technologies: ["Machine Learning", "Neural Architecture", "Python", "HuggingFace"],
     },
     {
       number: "02",
-      title: "Zephyr & Securities",
-      category: "Security Platform",
-      year: "2024",
-      description: "Advanced secure communication platform with end-to-end encryption, designed for businesses prioritizing data protection and privacy.",
-      link: "https://zephyrnsecurities.com",
-      technologies: ["Encryption", "Security", "Real-time Communication"],
+      title: "Zephyrn",
+      category: "Encrypted Communications",
+      year: "2025",
+      description: "A zero-knowledge encrypted communications platform delivering E2E encrypted calls, messages, and file transfers. Keys stay exclusively on user devices — making data access a mathematical impossibility. Engineered for enterprises and privacy-conscious individuals.",
+      link: "https://zephywebsite.vercel.app/",
+      technologies: ["E2E Encryption", "Zero Knowledge", "WebRTC", "Real-time Comms"],
     },
     {
       number: "03",
-      title: "Kinetic Typography",
-      category: "Interactive Experience",
-      year: "2024",
-      description: "An innovative web experience showcasing dynamic typography and motion design, pushing the boundaries of digital storytelling.",
-      technologies: ["Animation", "WebGL", "Interactive Design"],
+      title: "Punjab Heritage",
+      category: "Premium E-commerce",
+      year: "2025",
+      description: "A luxury e-commerce destination for authentic Punjabi handcrafted leather juttis and phulkari textiles. Curated from master artisans preserving centuries-old heritage, with immersive storytelling and a seamless pan-India shopping experience.",
+      link: "https://punjabiecom.vercel.app/",
+      technologies: ["E-commerce", "Product Showcase", "Payments", "Inventory"],
     },
     {
       number: "04",
-      title: "Generative Patterns",
-      category: "Visual System",
-      year: "2024",
-      description: "A creative exploration of algorithmic design and generative art, creating unique visual patterns that adapt and evolve.",
-      technologies: ["Generative Design", "Creative Coding", "Visual Systems"],
+      title: "UniTap",
+      category: "Campus Fintech",
+      year: "2025",
+      description: "A smart campus fintech platform revolutionising university payments through RFID-based student wallets. Cashless campus transactions, real-time analytics dashboards, and complete vendor visibility — all from one unified platform.",
+      link: "https://unitap-beta.vercel.app/",
+      technologies: ["RFID", "Fintech", "Analytics", "Payment Systems"],
     },
     {
       number: "05",
-      title: "Spatial Interface",
-      category: "3D Navigation",
-      year: "2023",
-      description: "Revolutionary 3D navigation system that transforms how users interact with digital content, creating immersive browsing experiences.",
-      technologies: ["3D Design", "WebGL", "User Experience"],
+      title: "PulseCal",
+      category: "Healthcare SaaS",
+      year: "2024",
+      description: "Enterprise healthcare platform trusted by 500+ providers, unifying scheduling, telemedicine, patient records, and billing. HIPAA-compliant with AI-powered no-show reduction, real-time queue management, and actionable analytics.",
+      link: "https://www.pulsecal.com/",
+      technologies: ["Telemedicine", "HIPAA", "AI Scheduling", "Analytics"],
+    },
+    {
+      number: "06",
+      title: "Cultural Hatti",
+      category: "Heritage Fashion E-commerce",
+      year: "2024",
+      description: "A heritage fashion platform celebrating India's artisan legacy — handcrafted sarees, designer suits, artisan jewelry, and timeless accessories from 100+ master craftspeople across 29 states. Pan-India free shipping with cultural storytelling.",
+      link: "https://www.culturalhatti.com/",
+      technologies: ["E-commerce", "Product Catalog", "Payments", "Logistics"],
+    },
+    {
+      number: "07",
+      title: "Walk In Square",
+      category: "Premium Retail Platform",
+      year: "2024",
+      description: "A premium retail development platform designed for modern shopping destinations. Elegant storefront experiences, sophisticated tenant management, analytics dashboards, and visitor engagement tools — setting new benchmarks for retail.",
+      link: "https://walkinsquare.vercel.app/",
+      technologies: ["Retail Platform", "Analytics", "Dashboard", "UX Design"],
     },
   ]
 
@@ -59,15 +80,18 @@ export default function OurWorkPage() {
         <div className="mx-auto max-w-7xl">
           {/* Hero */}
           <div
-            className={`mb-16 transition-all duration-700 ${
-              isVisible ? "translate-y-0 opacity-100" : "-translate-y-12 opacity-0"
-            }`}
+            className={`mb-16 transition-all duration-700 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+              }`}
           >
             <p className="mb-6 max-w-3xl text-lg leading-relaxed text-foreground/90 md:text-xl">
-              Explore our portfolio of digital solutions spanning web development, mobile apps, branding, and innovative digital experiences. Each project represents our commitment to excellence, creativity, and delivering results that matter.
+              Explore our portfolio of meticulously crafted digital solutions spanning AI platforms, encrypted communications,
+              enterprise SaaS, fintech, and luxury e-commerce. Each project reflects our unwavering commitment to precision,
+              innovation, and delivering results that redefine industry standards.
             </p>
             <p className="max-w-3xl text-base leading-relaxed text-foreground/80 md:text-lg">
-              From e-commerce platforms to secure communication systems, from experimental design explorations to production-ready applications—our work demonstrates the breadth of our capabilities and our passion for pushing digital boundaries.
+              From deep-tech AI optimization to heritage fashion e-commerce, from zero-knowledge security systems to
+              healthcare platforms trusted by hundreds of providers — our work demonstrates a caliber of execution
+              that consistently positions our clients ahead of the curve.
             </p>
           </div>
 
@@ -76,9 +100,8 @@ export default function OurWorkPage() {
             {projects.map((project, i) => (
               <div
                 key={i}
-                className={`group flex flex-col gap-4 border-b border-foreground/10 py-6 transition-all duration-700 hover:border-foreground/20 hover:bg-foreground/5 md:flex-row md:items-center md:justify-between md:gap-8 md:py-8 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-                }`}
+                className={`group flex flex-col gap-4 border-b border-foreground/10 py-6 transition-all duration-700 hover:border-foreground/20 hover:bg-foreground/5 md:flex-row md:items-center md:justify-between md:gap-8 md:py-8 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+                  }`}
                 style={{ transitionDelay: `${100 + i * 100}ms` }}
               >
                 <div className="flex flex-1 items-start gap-4 md:items-center md:gap-8">
@@ -128,16 +151,15 @@ export default function OurWorkPage() {
 
           {/* CTA */}
           <div
-            className={`mt-24 rounded-2xl border border-foreground/10 bg-card/20 backdrop-blur-sm p-8 text-center md:p-12 ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
-            } transition-all duration-700`}
+            className={`mt-24 rounded-2xl border border-foreground/10 bg-card/20 backdrop-blur-sm p-8 text-center md:p-12 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
+              } transition-all duration-700`}
             style={{ transitionDelay: `${600 + projects.length * 100}ms` }}
           >
             <h2 className="mb-4 font-sans text-3xl font-light tracking-tight text-foreground md:text-4xl">
-              Have a Project in Mind?
+              Have a Vision Worth Executing?
             </h2>
             <p className="mb-8 text-foreground/80">
-              Let's collaborate to bring your vision to life.
+              Let&apos;s collaborate to build something that sets a new standard.
             </p>
             <Link
               href="/#contact"
@@ -151,4 +173,3 @@ export default function OurWorkPage() {
     </PageLayout>
   )
 }
-

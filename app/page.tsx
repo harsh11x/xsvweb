@@ -8,8 +8,10 @@ import { ServicesSection } from "@/components/sections/services-section"
 import { PricingSection } from "@/components/sections/pricing-section"
 import { AboutSection } from "@/components/sections/about-section"
 import { ContactSection } from "@/components/sections/contact-section"
+import { TestimonialsSection } from "@/components/sections/testimonials-section"
 import { Footer } from "@/components/footer"
 import { MagneticButton } from "@/components/magnetic-button"
+import { MobileMenu } from "@/components/mobile-menu"
 import { useRef, useEffect, useState } from "react"
 import { FeaturedWorksSection } from "@/components/sections/featured-works-section"
 
@@ -101,7 +103,7 @@ export default function Home() {
         </button>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Home", "Featured", "Work", "Services", "Pricing", "About", "Contact"].map((item) => (
+          {["Home", "Featured", "Work", "Services", "Pricing", "About", "Testimonials", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -113,12 +115,16 @@ export default function Home() {
           ))}
         </div>
 
-        <MagneticButton
-          variant="secondary"
-          onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-        >
-          Get Started
-        </MagneticButton>
+        <div className="flex items-center gap-3">
+          <MagneticButton
+            variant="secondary"
+            className="hidden md:inline-flex"
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+          >
+            Get Started
+          </MagneticButton>
+          <MobileMenu />
+        </div>
       </nav>
 
       <div className={`relative z-10 transition-opacity duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
@@ -126,18 +132,18 @@ export default function Home() {
         <section className="flex min-h-screen w-full flex-col justify-end px-4 pb-16 pt-24 md:px-4 md:pb-24 lg:px-6">
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
-              <p className="font-mono text-xs text-foreground/90">Outdoor Media Marketing</p>
+              <p className="font-mono text-xs text-foreground/90">Digital Product Studio</p>
             </div>
             <h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-6xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
               <span className="text-balance">
-                Amplify Your Brand
+                We Build Digital
                 <br />
-                Across All Platforms
+                Products That Dominate
               </span>
             </h1>
             <p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
               <span className="text-pretty">
-                We craft exceptional digital experiences that transform businesses. From high-performance websites and mobile applications to strategic social media campaigns and compelling brand identities—we combine creative excellence with technical expertise to deliver solutions that drive measurable results and lasting impact.
+                From enterprise AI platforms to luxury e-commerce experiences — we architect high-performance digital products that redefine what's possible. Our work doesn't just meet expectations; it obliterates them. Every pixel engineered, every interaction crafted, every outcome measured.
               </span>
             </p>
             <div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
@@ -185,6 +191,9 @@ export default function Home() {
           <AboutSection
             scrollToSection={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
           />
+        </section>
+        <section id="testimonials">
+          <TestimonialsSection />
         </section>
         <section id="contact">
           <ContactSection />

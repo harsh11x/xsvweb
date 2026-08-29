@@ -4,6 +4,7 @@ import { Shader, ChromaFlow, Swirl } from "shaders/react"
 import { CustomCursor } from "@/components/custom-cursor"
 import { GrainOverlay } from "@/components/grain-overlay"
 import { MagneticButton } from "@/components/magnetic-button"
+import { MobileMenu } from "@/components/mobile-menu"
 import { Footer } from "@/components/footer"
 import { useRef, useEffect, useState, ReactNode } from "react"
 import Link from "next/link"
@@ -102,7 +103,7 @@ export function PageLayout({ children, title }: PageLayoutProps) {
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
-          {["Home", "Featured", "Work", "Services", "Pricing", "About", "Contact"].map((item) => (
+          {["Home", "Featured", "Work", "Services", "Pricing", "About", "Testimonials", "Contact"].map((item) => (
             <Link
               key={item}
               href={item === "Home" ? "/" : `/#${item.toLowerCase()}`}
@@ -114,18 +115,22 @@ export function PageLayout({ children, title }: PageLayoutProps) {
           ))}
         </div>
 
-        <MagneticButton
-          variant="secondary"
-          onClick={() => {
-            if (window.location.pathname === "/") {
-              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-            } else {
-              window.location.href = "/#contact"
-            }
-          }}
-        >
-          Get Started
-        </MagneticButton>
+        <div className="flex items-center gap-3">
+          <MagneticButton
+            variant="secondary"
+            className="hidden md:inline-flex"
+            onClick={() => {
+              if (window.location.pathname === "/") {
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+              } else {
+                window.location.href = "/#contact"
+              }
+            }}
+          >
+            Get Started
+          </MagneticButton>
+          <MobileMenu />
+        </div>
       </nav>
 
       <div className={`relative z-10 transition-opacity duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>

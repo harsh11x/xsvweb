@@ -11,30 +11,30 @@ export function ServicesSection() {
   const services = [
     {
       title: "Website Building",
-      description: "Transform your online presence with custom websites that combine stunning design, exceptional performance, and strategic functionality. We build scalable, SEO-optimized sites that convert visitors into customers while reflecting your unique brand identity.",
+      description: "We architect high-performance web platforms built on modern stacks — Next.js, React, TypeScript — that load in milliseconds, rank effortlessly on search engines, and convert with precision. Every site is engineered to be as fast as it is beautiful, as functional as it is elegant.",
       icon: Globe,
-      features: ["Responsive Design", "SEO Optimized", "Fast Loading", "CMS Integration"],
+      features: ["Next.js / React / TypeScript", "Sub-second Load Times", "SEO by Default", "Scalable Architecture"],
       color: "text-blue-500",
     },
     {
       title: "Social Media Marketing",
-      description: "Build thriving online communities and drive engagement through strategic social media campaigns. From content creation to community management, we help you connect with your audience, amplify your message, and achieve measurable growth across all platforms.",
+      description: "We craft data-driven social media strategies that don't just generate impressions — they generate revenue. From content creation to community management, we build magnetic brand presences that convert followers into loyal customers and amplify your market position.",
       icon: Share2,
-      features: ["Content Strategy", "Campaign Management", "Analytics", "Community Growth"],
+      features: ["Data-Driven Strategy", "Revenue-Focused Campaigns", "Real-time Analytics", "Community Building"],
       color: "text-emerald-500",
     },
     {
       title: "Branding & Design",
-      description: "Create memorable brand identities that resonate with your audience and differentiate you from competitors. We develop cohesive visual systems—from logos to brand guidelines—that tell your story and build lasting emotional connections.",
+      description: "We create brand identities that command attention and inspire trust. From luxury-grade visual systems to comprehensive brand guidelines, we build cohesive identities that tell your story with authority and leave a lasting, indelible impression on your audience.",
       icon: Palette,
-      features: ["Logo Design", "Brand Guidelines", "Visual Identity", "Design Systems"],
+      features: ["Logo & Identity", "Brand Guidelines", "Visual Systems", "Design Language"],
       color: "text-amber-500",
     },
     {
       title: "Mobile App Development",
-      description: "Bring your ideas to life with powerful mobile applications for iOS and Android. We build native and cross-platform apps that combine beautiful design, exceptional performance, and intuitive user experiences—delivering solutions that users love and businesses rely on.",
+      description: "We engineer native and cross-platform mobile applications that deliver buttery-smooth performance, stunning interfaces, and intuitive user experiences. From iOS to Android, we build apps that users can't put down and businesses can't do without.",
       icon: Smartphone,
-      features: ["iOS Development", "Android Development", "Cross-platform", "App Store Launch"],
+      features: ["iOS & Android Native", "Cross-platform (React Native)", "Real-time Systems", "App Store Optimisation"],
       color: "text-pink-500",
     },
   ]
@@ -54,7 +54,7 @@ export function ServicesSection() {
             Our Services
           </h2>
           <p className="font-mono text-sm text-foreground/60 md:text-base">
-            / Complete digital solutions for your business
+            / Precision-crafted capabilities that deliver results
           </p>
         </div>
 

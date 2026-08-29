@@ -15,6 +15,7 @@ export function MobileMenu() {
     { name: "Services", href: "/#services" },
     { name: "Pricing", href: "/#pricing" },
     { name: "About", href: "/#about" },
+    { name: "Testimonials", href: "/#testimonials" },
     { name: "Contact", href: "/#contact" },
   ]
 
