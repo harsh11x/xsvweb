@@ -10,40 +10,39 @@ export function PricingSection() {
   const packages = {
     website: [
       {
-        name: "Starter Package",
-        price: "₹39,999",
-        originalPrice: "₹49,999",
+        name: "Portfolio Package",
+        price: "₹50,000",
+        originalPrice: "₹65,000",
         features: [
-          "5-page responsive website",
-          "Mobile-optimised design",
+          "Professional portfolio website",
+          "Mobile-optimised premium design",
           "SEO-ready structure",
-          "WhatsApp integration",
-          "Contact form setup",
-          "Domain & hosting configuration",
+          "WhatsApp & Social integration",
+          "Contact form & Lead capture",
+          "Domain & premium hosting setup",
           "1-month post-launch support",
         ],
       },
       {
-        name: "Professional Package",
-        price: "₹65,000",
-        originalPrice: "₹85,000",
+        name: "Business Package",
+        price: "₹80,000",
+        originalPrice: "₹1,00,000",
         badge: "MOST POPULAR",
         features: [
-          "10-page responsive website",
+          "Comprehensive business website",
           "Blog/News section with CMS",
-          "Advanced contact forms",
+          "Advanced custom contact forms",
           "Appointment/Booking system",
-          "Payment gateway integration",
+          "Basic payment gateway integration",
           "Advanced SEO optimisation",
-          "Social media integration",
           "Analytics dashboard setup",
           "3-month technical support",
         ],
       },
       {
         name: "E-Commerce Pro",
-        price: "₹85,000",
-        originalPrice: "₹1,20,000",
+        price: "₹1,50,000",
+        originalPrice: "₹2,00,000",
         features: [
           "Complete online store setup",
           "Unlimited products & categories",
@@ -52,9 +51,24 @@ export function PricingSection() {
           "Customer account management",
           "Discount & coupon system",
           "Order tracking & notifications",
-          "Shipping integration",
-          "Sales analytics dashboard",
+          "Shipping & logistics integration",
           "6-month priority support",
+        ],
+      },
+      {
+        name: "Business Management",
+        price: "₹2,00,000",
+        originalPrice: "₹2,50,000",
+        features: [
+          "Custom business management software",
+          "Advanced user roles & permissions",
+          "Custom workflows & automation",
+          "Comprehensive ERP/CRM features",
+          "Real-time analytics & reporting",
+          "Third-party API integrations",
+          "High-security data architecture",
+          "Dedicated account manager",
+          "12-month enterprise support",
         ],
       },
     ],
@@ -182,7 +196,7 @@ export function PricingSection() {
         {/* Website Packages */}
         <div className="mb-12 md:mb-16 lg:mb-20">
           <h3 className="mb-4 font-sans text-xl font-light text-foreground sm:mb-6 sm:text-2xl">Website Development</h3>
-          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 xl:grid-cols-4">
             {packages.website.map((pkg, i) => (
               <PricingCard key={i} package={pkg} index={i} isVisible={isVisible} delay={i * 100} />
             ))}
