@@ -35,6 +35,34 @@ export function TestimonialsSection() {
       content: "We needed an e-commerce platform that honoured 5,000 years of heritage while delivering a world-class shopping experience. XSV nailed both. The storytelling, the curation, the checkout flow — every detail reflects the craftsmanship of our artisans. Sales grew 3x in the first quarter.",
       rating: 5,
     },
+    {
+      name: "Ramesh Gupta",
+      role: "Operations Director",
+      company: "UniTap Campus Solutions",
+      content: "Managing transactions for thousands of students used to be an operational nightmare. The advanced RFID cashless ecosystem XSV deployed is flawlessly secure and has given our administration unprecedented, real-time visibility into campus commerce. It’s an absolute game-changer.",
+      rating: 5,
+    },
+    {
+      name: "Amrit Kaur",
+      role: "Co-Founder",
+      company: "Punjab Heritage",
+      content: "We entrusted XSV to bring the soulful art of our Punjabi master artisans to a global luxury market. The result was a stunning e-commerce boutique that perfectly balances high fashion aesthetics with a robust, frictionless checkout architecture. Truly top-tier execution.",
+      rating: 5,
+    },
+    {
+      name: "Siddharth Menon",
+      role: "Chief Strategy Officer",
+      company: "Walk In Square",
+      content: "The digital infrastructure XSV developed for our retail properties completely elevated our tenant management and visitor analytics. It is sleek, powerful, and built to scale effortlessly. They didn't just build software; they delivered a masterclass in property technology.",
+      rating: 5,
+    },
+    {
+      name: "Ananya Deshmukh",
+      role: "Head of Product",
+      company: "Stellara FinServe",
+      content: "As a rapidly growing fintech, we needed our core application to be bulletproof. The dual-platform mobile solution built by XSV exceeded our wildest expectations. Smooth, incredibly fast, and impenetrable. They operate at a standard of engineering excellence rarely seen in the industry.",
+      rating: 5,
+    },
   ]
 
   return (
